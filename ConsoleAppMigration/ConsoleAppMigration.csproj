@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A1138B9-047F-4106-A56A-F9F41FB87A8E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleAppMigration</RootNamespace>
+    <AssemblyName>ConsoleAppMigration</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.3\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlServerCompact.4.0.8482.1\lib\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ampu_acymailing_config.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_fields.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_filter.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_history.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_list.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_listcampaign.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_listmail.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_listsub.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_mail.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_queue.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_rules.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_stats.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_subscriber.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_subscriber_copy.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_template.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_url.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_urlclick.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_acymailing_userstats.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_assets.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_associations.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_banners.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_banner_clients.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_banner_tracks.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_categories.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_contact_details.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_content.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_content_frontpage.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_content_rating.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_core_log_searches.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_easybook.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_easybook_badwords.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_extensions.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_filters.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms0.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms1.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms2.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms3.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms4.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms5.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms6.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms7.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms8.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_terms9.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_termsa.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_termsb.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_termsc.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_termsd.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_termse.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_links_termsf.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_taxonomy.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_taxonomy_map.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_terms.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_terms_common.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_tokens.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_tokens_aggregate.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_finder_types.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_ga_dash.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_ga_dash_cache.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments_blacklist.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments_custom_bbcodes.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments_objects.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments_reports.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments_settings.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments_subscriptions.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments_version.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_jcomments_votes.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_aliases.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_announcement.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_attachments.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_categories.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_configuration.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_keywords.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_keywords_map.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_messages.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_messages_text.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_polls.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_polls_options.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_polls_users.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_ranks.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_sessions.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_smileys.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_thankyou.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_topics.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_users.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_users_banned.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_user_categories.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_user_read.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_user_topics.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_kunena_version.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_languages.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_menu.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_menu_types.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_messages.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_messages_cfg.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_modules.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_modules_menu.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_newsfeeds.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_overrider.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_categories.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_comments.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_fb_users.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_img_comments.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_img_votes.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_img_votes_statistics.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_tags.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_tags_ref.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_user.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_votes.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_phocagallery_votes_statistics.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_redirect_links.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_schemas.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_session.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_template_styles.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_updates.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_update_categories.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_update_sites.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_update_sites_extensions.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_usergroups.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_users.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_user_notes.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_user_profiles.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_user_usergroup_map.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_viewlevels.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_weblinks.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_wf_profiles.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_xmap_items.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ampu_xmap_sitemap.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="blank.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CodeFirstForAspIdentity\DbModel\Album.cs" />
+    <Compile Include="CodeFirstForAspIdentity\DbModel\Banner.cs" />
+    <Compile Include="CodeFirstForAspIdentity\DbModel\Category.cs" />
+    <Compile Include="CodeFirstForAspIdentity\DbModel\Content.cs" />
+    <Compile Include="CodeFirstForAspIdentity\DbModel\Image.cs" />
+    <Compile Include="CodeFirstForAspIdentity\DbModel\Language.cs" />
+    <Compile Include="CodeFirstForAspIdentity\DbModel\Menu.cs" />
+    <Compile Include="CodeFirstForAspIdentity\DbModel\MenuType.cs" />
+    <Compile Include="CodeFirstForAspIdentity\DbModel\Site.cs" />
+    <Compile Include="CodeFirstForAspIdentity\IdentityModels.cs" />
+    <Compile Include="CodeFirstForAspIdentity\Migration\AdoNetMigration.cs" />
+    <Compile Include="CodeFirstForAspIdentity\Migration\MigrationMainSite.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\Album.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\Banner.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\Category.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\Content.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\Image.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\Language.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\Menu.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\MenuType.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\MigrationScript\Migration.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\MigrationScript\MigrationWithPrefixSite.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\Site.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\User.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\UserGroup.cs" />
+    <Compile Include="CodeFirst\ModelCodeFirst\UspaDbContextEntity.cs" />
+    <Compile Include="history.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OldUspaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldUspaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OldUspaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OldUspaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldUspaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pro_config.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_dev_direction.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_direction.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_port.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_project.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_roles.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_roles_users.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_users.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_user_tokens.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_admin_log.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_admin_menu.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_category.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_config.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_content.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_files.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_images.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_info.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_lan.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_menu.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_url_content.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_url_menu.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="site_users.cs">
+      <DependentUpon>OldUspaModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="OldUspaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OldUspaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OldUspaModel.edmx.diagram">
+      <DependentUpon>OldUspaModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OldUspaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OldUspaModel.edmx</DependentUpon>
+      <LastGenOutput>OldUspaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OldUspaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OldUspaModel.edmx</DependentUpon>
+      <LastGenOutput>OldUspaModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

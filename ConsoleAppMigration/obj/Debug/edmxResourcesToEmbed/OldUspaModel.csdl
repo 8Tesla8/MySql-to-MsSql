@@ -1,0 +1,2413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="uspaOldModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="ampu_acymailing_config">
+    <Key>
+      <PropertyRef Name="namekey" />
+    </Key>
+    <Property Name="namekey" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_fields">
+    <Key>
+      <PropertyRef Name="fieldid" />
+    </Key>
+    <Property Name="fieldid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fieldname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="namekey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="Byte" Nullable="false" />
+    <Property Name="ordering" Type="Int32" />
+    <Property Name="options" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="core" Type="Byte" Nullable="false" />
+    <Property Name="required" Type="Byte" Nullable="false" />
+    <Property Name="backend" Type="Byte" Nullable="false" />
+    <Property Name="frontcomp" Type="Byte" Nullable="false" />
+    <Property Name="default" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="listing" Type="Byte" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_filter">
+    <Key>
+      <PropertyRef Name="filid" />
+    </Key>
+    <Property Name="filid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="published" Type="Byte" />
+    <Property Name="lasttime" Type="Int64" />
+    <Property Name="trigger" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="report" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="action" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="filter" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_list">
+    <Key>
+      <PropertyRef Name="listid" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="ordering" Type="Int32" />
+    <Property Name="listid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="published" Type="SByte" />
+    <Property Name="userid" Type="Int64" />
+    <Property Name="alias" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="visible" Type="SByte" Nullable="false" />
+    <Property Name="welmailid" Type="Int32" />
+    <Property Name="unsubmailid" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="access_sub" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="access_manage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="languages" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_listcampaign">
+    <Key>
+      <PropertyRef Name="campaignid" />
+      <PropertyRef Name="listid" />
+    </Key>
+    <Property Name="campaignid" Type="Int32" Nullable="false" />
+    <Property Name="listid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_listmail">
+    <Key>
+      <PropertyRef Name="listid" />
+      <PropertyRef Name="mailid" />
+    </Key>
+    <Property Name="listid" Type="Int32" Nullable="false" />
+    <Property Name="mailid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_listsub">
+    <Key>
+      <PropertyRef Name="listid" />
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="listid" Type="Int32" Nullable="false" />
+    <Property Name="subid" Type="Int64" Nullable="false" />
+    <Property Name="subdate" Type="Int64" />
+    <Property Name="unsubdate" Type="Int64" />
+    <Property Name="status" Type="SByte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_mail">
+    <Key>
+      <PropertyRef Name="mailid" />
+    </Key>
+    <Property Name="mailid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="subject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="body" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="altbody" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="SByte" />
+    <Property Name="senddate" Type="Int64" />
+    <Property Name="created" Type="Int64" />
+    <Property Name="fromname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="fromemail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="replyname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="replyemail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="visible" Type="SByte" Nullable="false" />
+    <Property Name="userid" Type="Int64" />
+    <Property Name="alias" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="attach" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="html" Type="SByte" Nullable="false" />
+    <Property Name="tempid" Type="Int16" Nullable="false" />
+    <Property Name="key" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="sentby" Type="Int64" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="filter" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_queue">
+    <Key>
+      <PropertyRef Name="subid" />
+      <PropertyRef Name="mailid" />
+    </Key>
+    <Property Name="senddate" Type="Int64" Nullable="false" />
+    <Property Name="subid" Type="Int64" Nullable="false" />
+    <Property Name="mailid" Type="Int32" Nullable="false" />
+    <Property Name="priority" Type="Byte" />
+    <Property Name="try" Type="Byte" Nullable="false" />
+    <Property Name="paramqueue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_rules">
+    <Key>
+      <PropertyRef Name="ruleid" />
+    </Key>
+    <Property Name="ruleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ordering" Type="Int16" />
+    <Property Name="regex" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="executed_on" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="action_message" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="action_user" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_stats">
+    <Key>
+      <PropertyRef Name="mailid" />
+    </Key>
+    <Property Name="mailid" Type="Int32" Nullable="false" />
+    <Property Name="senthtml" Type="Int64" Nullable="false" />
+    <Property Name="senttext" Type="Int64" Nullable="false" />
+    <Property Name="senddate" Type="Int64" Nullable="false" />
+    <Property Name="openunique" Type="Int32" Nullable="false" />
+    <Property Name="opentotal" Type="Int64" Nullable="false" />
+    <Property Name="bounceunique" Type="Int32" Nullable="false" />
+    <Property Name="fail" Type="Int32" Nullable="false" />
+    <Property Name="clicktotal" Type="Int64" Nullable="false" />
+    <Property Name="clickunique" Type="Int32" Nullable="false" />
+    <Property Name="unsub" Type="Int32" Nullable="false" />
+    <Property Name="forward" Type="Int32" Nullable="false" />
+    <Property Name="bouncedetails" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_subscriber">
+    <Key>
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="subid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userid" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created" Type="Int64" />
+    <Property Name="confirmed" Type="SByte" Nullable="false" />
+    <Property Name="enabled" Type="SByte" Nullable="false" />
+    <Property Name="accept" Type="SByte" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="html" Type="SByte" Nullable="false" />
+    <Property Name="key" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="confirmed_date" Type="Int64" Nullable="false" />
+    <Property Name="confirmed_ip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="lastopen_date" Type="Int64" Nullable="false" />
+    <Property Name="lastclick_date" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_subscriber_copy">
+    <Key>
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="subid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userid" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created" Type="Int64" />
+    <Property Name="confirmed" Type="SByte" Nullable="false" />
+    <Property Name="enabled" Type="SByte" Nullable="false" />
+    <Property Name="accept" Type="SByte" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="html" Type="SByte" Nullable="false" />
+    <Property Name="key" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="confirmed_date" Type="Int64" Nullable="false" />
+    <Property Name="confirmed_ip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="lastopen_date" Type="Int64" Nullable="false" />
+    <Property Name="lastclick_date" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_template">
+    <Key>
+      <PropertyRef Name="tempid" />
+    </Key>
+    <Property Name="tempid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="body" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="altbody" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="created" Type="Int64" />
+    <Property Name="published" Type="SByte" Nullable="false" />
+    <Property Name="premium" Type="SByte" Nullable="false" />
+    <Property Name="ordering" Type="Int32" />
+    <Property Name="namekey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="styles" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="subject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="stylesheet" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="fromname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="fromemail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="replyname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="replyemail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="thumb" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="readmore" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_url">
+    <Key>
+      <PropertyRef Name="urlid" />
+    </Key>
+    <Property Name="urlid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_urlclick">
+    <Key>
+      <PropertyRef Name="urlid" />
+      <PropertyRef Name="mailid" />
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="urlid" Type="Int64" Nullable="false" />
+    <Property Name="mailid" Type="Int32" Nullable="false" />
+    <Property Name="click" Type="Int32" Nullable="false" />
+    <Property Name="subid" Type="Int64" Nullable="false" />
+    <Property Name="date" Type="Int64" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_userstats">
+    <Key>
+      <PropertyRef Name="mailid" />
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="mailid" Type="Int32" Nullable="false" />
+    <Property Name="subid" Type="Int64" Nullable="false" />
+    <Property Name="html" Type="Byte" Nullable="false" />
+    <Property Name="sent" Type="Byte" Nullable="false" />
+    <Property Name="senddate" Type="Int64" Nullable="false" />
+    <Property Name="open" Type="Byte" Nullable="false" />
+    <Property Name="opendate" Type="Int32" Nullable="false" />
+    <Property Name="bounce" Type="SByte" Nullable="false" />
+    <Property Name="fail" Type="SByte" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_assets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_id" Type="Int32" Nullable="false" />
+    <Property Name="lft" Type="Int32" Nullable="false" />
+    <Property Name="rgt" Type="Int32" Nullable="false" />
+    <Property Name="level" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rules" Type="String" MaxLength="5120" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_associations">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="context" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="context" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="key" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_banner_clients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contact" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extrainfo" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="SByte" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="own_prefix" Type="SByte" Nullable="false" />
+    <Property Name="metakey_prefix" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="purchase_type" Type="SByte" Nullable="false" />
+    <Property Name="track_clicks" Type="SByte" Nullable="false" />
+    <Property Name="track_impressions" Type="SByte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_banner_tracks">
+    <Key>
+      <PropertyRef Name="track_date" />
+      <PropertyRef Name="track_type" />
+      <PropertyRef Name="banner_id" />
+    </Key>
+    <Property Name="track_date" Type="DateTime" Nullable="false" />
+    <Property Name="track_type" Type="Int64" Nullable="false" />
+    <Property Name="banner_id" Type="Int64" Nullable="false" />
+    <Property Name="count" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_banners">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cid" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="imptotal" Type="Int32" Nullable="false" />
+    <Property Name="impmade" Type="Int32" Nullable="false" />
+    <Property Name="clicks" Type="Int32" Nullable="false" />
+    <Property Name="clickurl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="SByte" Nullable="false" />
+    <Property Name="catid" Type="Int64" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="custombannercode" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sticky" Type="Boolean" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="own_prefix" Type="Boolean" Nullable="false" />
+    <Property Name="metakey_prefix" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="purchase_type" Type="SByte" Nullable="false" />
+    <Property Name="track_clicks" Type="SByte" Nullable="false" />
+    <Property Name="track_impressions" Type="SByte" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="publish_up" Type="DateTime" Nullable="false" />
+    <Property Name="publish_down" Type="DateTime" Nullable="false" />
+    <Property Name="reset" Type="DateTime" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="asset_id" Type="Int64" Nullable="false" />
+    <Property Name="parent_id" Type="Int64" Nullable="false" />
+    <Property Name="lft" Type="Int32" Nullable="false" />
+    <Property Name="rgt" Type="Int32" Nullable="false" />
+    <Property Name="level" Type="Int64" Nullable="false" />
+    <Property Name="path" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="access" Type="Int64" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadesc" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metakey" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadata" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created_user_id" Type="Int64" Nullable="false" />
+    <Property Name="created_time" Type="DateTime" Nullable="false" />
+    <Property Name="modified_user_id" Type="Int64" Nullable="false" />
+    <Property Name="modified_time" Type="DateTime" Nullable="false" />
+    <Property Name="hits" Type="Int64" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_contact_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="con_position" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="suburb" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="postcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telephone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fax" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="misc" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="imagepos" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email_to" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="default_con" Type="Boolean" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="access" Type="Int64" Nullable="false" />
+    <Property Name="mobile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="webpage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sortname1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sortname2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sortname3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" />
+    <Property Name="created_by" Type="Int64" Nullable="false" />
+    <Property Name="created_by_alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modified" Type="DateTime" Nullable="false" />
+    <Property Name="modified_by" Type="Int64" Nullable="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadata" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="featured" Type="Byte" Nullable="false" />
+    <Property Name="xreference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publish_up" Type="DateTime" Nullable="false" />
+    <Property Name="publish_down" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="asset_id" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title_alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="introtext" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fulltext" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="SByte" Nullable="false" />
+    <Property Name="sectionid" Type="Int64" Nullable="false" />
+    <Property Name="mask" Type="Int64" Nullable="false" />
+    <Property Name="catid" Type="Int64" Nullable="false" />
+    <Property Name="created" Type="DateTime" />
+    <Property Name="created_by" Type="Int64" Nullable="false" />
+    <Property Name="created_by_alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modified" Type="DateTime" />
+    <Property Name="modified_by" Type="Int64" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" />
+    <Property Name="publish_up" Type="DateTime" />
+    <Property Name="images" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publish_down" Type="DateTime" />
+    <Property Name="urls" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="attribs" Type="String" MaxLength="5120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="version" Type="Int64" Nullable="false" />
+    <Property Name="parentid" Type="Int64" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="access" Type="Int64" Nullable="false" />
+    <Property Name="hits" Type="Int64" Nullable="false" />
+    <Property Name="metadata" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="featured" Type="Byte" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="xreference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_content_frontpage">
+    <Key>
+      <PropertyRef Name="content_id" />
+    </Key>
+    <Property Name="content_id" Type="Int32" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_content_rating">
+    <Key>
+      <PropertyRef Name="content_id" />
+    </Key>
+    <Property Name="content_id" Type="Int32" Nullable="false" />
+    <Property Name="rating_sum" Type="Int64" Nullable="false" />
+    <Property Name="rating_count" Type="Int64" Nullable="false" />
+    <Property Name="lastip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_easybook">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gbip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gbname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gbmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="gbmailshow" Type="Boolean" Nullable="false" />
+    <Property Name="gbloca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gbpage" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="gbvote" Type="Int32" />
+    <Property Name="gbtext" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gbdate" Type="DateTime" />
+    <Property Name="gbtitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gbcomment" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="gbicq" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="gbaim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gbmsn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gbyah" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gbskype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_easybook_badwords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="word" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_extensions">
+    <Key>
+      <PropertyRef Name="extension_id" />
+    </Key>
+    <Property Name="extension_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="element" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="folder" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="client_id" Type="SByte" Nullable="false" />
+    <Property Name="enabled" Type="SByte" Nullable="false" />
+    <Property Name="access" Type="Int64" Nullable="false" />
+    <Property Name="protected" Type="SByte" Nullable="false" />
+    <Property Name="manifest_cache" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="custom_data" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="system_data" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" />
+    <Property Name="state" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ampu_finder_filters">
+    <Key>
+      <PropertyRef Name="filter_id" />
+    </Key>
+    <Property Name="filter_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="Boolean" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" />
+    <Property Name="created_by" Type="Int64" Nullable="false" />
+    <Property Name="created_by_alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modified" Type="DateTime" Nullable="false" />
+    <Property Name="modified_by" Type="Int64" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="map_count" Type="Int64" Nullable="false" />
+    <Property Name="data" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links">
+    <Key>
+      <PropertyRef Name="link_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="route" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="indexdate" Type="DateTime" Nullable="false" />
+    <Property Name="md5sum" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="state" Type="Int32" />
+    <Property Name="access" Type="Int32" />
+    <Property Name="language" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publish_start_date" Type="DateTime" Nullable="false" />
+    <Property Name="publish_end_date" Type="DateTime" Nullable="false" />
+    <Property Name="start_date" Type="DateTime" Nullable="false" />
+    <Property Name="end_date" Type="DateTime" Nullable="false" />
+    <Property Name="type_id" Type="Int32" Nullable="false" />
+    <Property Name="object" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms0">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms1">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms2">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms3">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms4">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms5">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms6">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms7">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms8">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_terms9">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_termsa">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_termsb">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_termsc">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_termsd">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_termse">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_links_termsf">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_taxonomy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_id" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="Boolean" Nullable="false" />
+    <Property Name="access" Type="Boolean" Nullable="false" />
+    <Property Name="ordering" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_taxonomy_map">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="node_id" />
+    </Key>
+    <Property Name="link_id" Type="Int64" Nullable="false" />
+    <Property Name="node_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_terms">
+    <Key>
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+    <Property Name="term" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stem" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="common" Type="Boolean" Nullable="false" />
+    <Property Name="phrase" Type="Boolean" Nullable="false" />
+    <Property Name="soundex" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="links" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="parent" Type="Int64" Nullable="false" />
+    <Property Name="thread_id" Type="Int64" Nullable="false" />
+    <Property Name="path" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="level" Type="Boolean" Nullable="false" />
+    <Property Name="object_id" Type="Int64" Nullable="false" />
+    <Property Name="object_group" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="object_params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lang" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userid" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="homepage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="39" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="isgood" Type="Int16" Nullable="false" />
+    <Property Name="ispoor" Type="Int16" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="deleted" Type="Boolean" Nullable="false" />
+    <Property Name="subscribe" Type="Boolean" Nullable="false" />
+    <Property Name="source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="source_id" Type="Int64" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="editor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_blacklist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="39" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userid" Type="Int64" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" />
+    <Property Name="created_by" Type="Int64" Nullable="false" />
+    <Property Name="expire" Type="DateTime" Nullable="false" />
+    <Property Name="reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="editor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_custom_bbcodes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="simple_pattern" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="simple_replacement_html" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="simple_replacement_text" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pattern" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="replacement_html" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="replacement_text" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="button_acl" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="button_open_tag" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="button_close_tag" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="button_title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="button_prompt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="button_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="button_css" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="button_enabled" Type="Boolean" Nullable="false" />
+    <Property Name="ordering" Type="Int64" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_objects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="object_id" Type="Int64" Nullable="false" />
+    <Property Name="object_group" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="access" Type="Byte" Nullable="false" />
+    <Property Name="userid" Type="Int64" Nullable="false" />
+    <Property Name="expired" Type="Byte" Nullable="false" />
+    <Property Name="modified" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_reports">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="commentid" Type="Int64" Nullable="false" />
+    <Property Name="userid" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="39" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_settings">
+    <Key>
+      <PropertyRef Name="component" />
+      <PropertyRef Name="lang" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="component" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_subscriptions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="object_id" Type="Int64" Nullable="false" />
+    <Property Name="object_group" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lang" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userid" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hash" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_version">
+    <Key>
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="version" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="previous" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="installed" Type="DateTime" Nullable="false" />
+    <Property Name="updated" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_votes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="commentid" Type="Int64" Nullable="false" />
+    <Property Name="userid" Type="Int64" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="39" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="value" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_announcement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="sdescription" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="ordering" Type="SByte" Nullable="false" />
+    <Property Name="showdate" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_attachments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="mesid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="hash" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="size" Type="Int32" />
+    <Property Name="folder" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="filetype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="icon_id" Type="SByte" Nullable="false" />
+    <Property Name="locked" Type="SByte" Nullable="false" />
+    <Property Name="accesstype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="access" Type="Int32" Nullable="false" />
+    <Property Name="pub_access" Type="Int32" Nullable="false" />
+    <Property Name="pub_recurse" Type="SByte" />
+    <Property Name="admin_access" Type="Int32" Nullable="false" />
+    <Property Name="admin_recurse" Type="SByte" />
+    <Property Name="ordering" Type="Int16" Nullable="false" />
+    <Property Name="published" Type="SByte" Nullable="false" />
+    <Property Name="channels" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="checked_out" Type="SByte" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="review" Type="SByte" Nullable="false" />
+    <Property Name="allow_anonymous" Type="SByte" Nullable="false" />
+    <Property Name="post_anonymous" Type="SByte" Nullable="false" />
+    <Property Name="hits" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="headerdesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="class_sfx" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="allow_polls" Type="SByte" Nullable="false" />
+    <Property Name="topic_ordering" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numTopics" Type="Int32" Nullable="false" />
+    <Property Name="numPosts" Type="Int32" Nullable="false" />
+    <Property Name="last_topic_id" Type="Int32" Nullable="false" />
+    <Property Name="last_post_id" Type="Int32" Nullable="false" />
+    <Property Name="last_post_time" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_configuration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_keywords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="public_count" Type="Int32" Nullable="false" />
+    <Property Name="total_count" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="parent" Type="Int32" />
+    <Property Name="thread" Type="Int32" />
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="time" Type="Int32" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="topic_emoticon" Type="Int32" Nullable="false" />
+    <Property Name="locked" Type="SByte" Nullable="false" />
+    <Property Name="hold" Type="SByte" Nullable="false" />
+    <Property Name="ordering" Type="Int32" />
+    <Property Name="hits" Type="Int32" />
+    <Property Name="moved" Type="SByte" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_time" Type="Int32" />
+    <Property Name="modified_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_messages_text">
+    <Key>
+      <PropertyRef Name="mesid" />
+    </Key>
+    <Property Name="mesid" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_polls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="threadid" Type="Int32" Nullable="false" />
+    <Property Name="polltimetolive" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_polls_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="pollid" Type="Int32" />
+    <Property Name="text" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="votes" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_ranks">
+    <Key>
+      <PropertyRef Name="rank_id" />
+    </Key>
+    <Property Name="rank_id" Type="Int32" Nullable="false" />
+    <Property Name="rank_title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rank_min" Type="Int32" Nullable="false" />
+    <Property Name="rank_special" Type="Boolean" Nullable="false" />
+    <Property Name="rank_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_sessions">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="allowed" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="lasttime" Type="Int32" Nullable="false" />
+    <Property Name="readtopics" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="currvisit" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_smileys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="code" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="greylocation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="emoticonbar" Type="SByte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_topics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="icon_id" Type="Int32" Nullable="false" />
+    <Property Name="locked" Type="SByte" Nullable="false" />
+    <Property Name="hold" Type="SByte" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="posts" Type="Int32" Nullable="false" />
+    <Property Name="hits" Type="Int32" Nullable="false" />
+    <Property Name="attachments" Type="Int32" Nullable="false" />
+    <Property Name="poll_id" Type="Int32" Nullable="false" />
+    <Property Name="moved_id" Type="Int32" Nullable="false" />
+    <Property Name="first_post_id" Type="Int32" Nullable="false" />
+    <Property Name="first_post_time" Type="Int32" Nullable="false" />
+    <Property Name="first_post_userid" Type="Int32" Nullable="false" />
+    <Property Name="first_post_message" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="first_post_guest_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="last_post_id" Type="Int32" Nullable="false" />
+    <Property Name="last_post_time" Type="Int32" Nullable="false" />
+    <Property Name="last_post_userid" Type="Int32" Nullable="false" />
+    <Property Name="last_post_message" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="last_post_guest_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_user_categories">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="role" Type="SByte" Nullable="false" />
+    <Property Name="allreadtime" Type="DateTime" />
+    <Property Name="subscribed" Type="SByte" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_users">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="view" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="signature" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="moderator" Type="Int32" />
+    <Property Name="banned" Type="DateTime" />
+    <Property Name="ordering" Type="Int32" />
+    <Property Name="posts" Type="Int32" />
+    <Property Name="avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="karma" Type="Int32" />
+    <Property Name="karma_time" Type="Int32" />
+    <Property Name="group_id" Type="Int32" />
+    <Property Name="uhits" Type="Int32" />
+    <Property Name="personalText" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="SByte" Nullable="false" />
+    <Property Name="birthdate" Type="DateTime" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="icq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="aim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="msn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="skype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="twitter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="facebook" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gtalk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="myspace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="linkedin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="delicious" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="friendfeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="digg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="blogspot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="flickr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bebo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="websitename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="websiteurl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rank" Type="SByte" Nullable="false" />
+    <Property Name="hideEmail" Type="Boolean" Nullable="false" />
+    <Property Name="showOnline" Type="Boolean" Nullable="false" />
+    <Property Name="thankyou" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_users_banned">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="ip" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="blocked" Type="SByte" Nullable="false" />
+    <Property Name="expiration" Type="DateTime" />
+    <Property Name="created_by" Type="Int32" Nullable="false" />
+    <Property Name="created_time" Type="DateTime" Nullable="false" />
+    <Property Name="reason_private" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="reason_public" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="modified_by" Type="Int32" />
+    <Property Name="modified_time" Type="DateTime" />
+    <Property Name="comments" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_version">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="version" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="versiondate" Type="DateTime" Nullable="false" />
+    <Property Name="installdate" Type="DateTime" Nullable="false" />
+    <Property Name="build" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="versionname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_languages">
+    <Key>
+      <PropertyRef Name="lang_id" />
+    </Key>
+    <Property Name="lang_id" Type="Int64" Nullable="false" />
+    <Property Name="lang_code" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title_native" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sitename" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="Int32" Nullable="false" />
+    <Property Name="access" Type="Int64" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="menutype" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="path" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="link" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="SByte" Nullable="false" />
+    <Property Name="parent_id" Type="Int64" Nullable="false" />
+    <Property Name="level" Type="Int64" Nullable="false" />
+    <Property Name="component_id" Type="Int64" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="browserNav" Type="SByte" Nullable="false" />
+    <Property Name="access" Type="Int64" Nullable="false" />
+    <Property Name="img" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="template_style_id" Type="Int64" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lft" Type="Int32" Nullable="false" />
+    <Property Name="rgt" Type="Int32" Nullable="false" />
+    <Property Name="home" Type="Byte" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="client_id" Type="SByte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_menu_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="menutype" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="48" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_messages">
+    <Key>
+      <PropertyRef Name="message_id" />
+    </Key>
+    <Property Name="message_id" Type="Int64" Nullable="false" />
+    <Property Name="user_id_from" Type="Int64" Nullable="false" />
+    <Property Name="user_id_to" Type="Int64" Nullable="false" />
+    <Property Name="folder_id" Type="Byte" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="state" Type="Boolean" Nullable="false" />
+    <Property Name="priority" Type="Boolean" Nullable="false" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_modules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="publish_up" Type="DateTime" Nullable="false" />
+    <Property Name="publish_down" Type="DateTime" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="module" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="access" Type="Int64" Nullable="false" />
+    <Property Name="showtitle" Type="Byte" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="client_id" Type="SByte" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_modules_menu">
+    <Key>
+      <PropertyRef Name="moduleid" />
+      <PropertyRef Name="menuid" />
+    </Key>
+    <Property Name="moduleid" Type="Int32" Nullable="false" />
+    <Property Name="menuid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_newsfeeds">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="link" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="filename" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="numarticles" Type="Int64" Nullable="false" />
+    <Property Name="cache_time" Type="Int64" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="rtl" Type="SByte" Nullable="false" />
+    <Property Name="access" Type="Int64" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" />
+    <Property Name="created_by" Type="Int64" Nullable="false" />
+    <Property Name="created_by_alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modified" Type="DateTime" Nullable="false" />
+    <Property Name="modified_by" Type="Int64" Nullable="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadata" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="xreference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publish_up" Type="DateTime" Nullable="false" />
+    <Property Name="publish_down" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_overrider">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="constant" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="string" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="file" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="sid" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="filename" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="hits" Type="Int32" Nullable="false" />
+    <Property Name="latitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="longitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="zoom" Type="Int32" Nullable="false" />
+    <Property Name="geotitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="videocode" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="vmproductid" Type="Int32" Nullable="false" />
+    <Property Name="imgorigsize" Type="Int32" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="approved" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int32" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metadata" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="extlink1" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="extlink2" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="extid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="exttype" Type="Boolean" Nullable="false" />
+    <Property Name="extl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extm" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="exts" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="exto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extw" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="exth" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" Nullable="false" />
+    <Property Name="owner_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="image_position" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="approved" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="editor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="access" Type="Byte" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="hits" Type="Int32" Nullable="false" />
+    <Property Name="accessuserid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uploaduserid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="deleteuserid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="userfolder" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="latitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="longitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="zoom" Type="Int32" Nullable="false" />
+    <Property Name="geotitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="exta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extauth" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extfbuid" Type="Int32" Nullable="false" />
+    <Property Name="extfbcatid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metadata" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_fb_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="appid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appsid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="uid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="secret" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="base_domain" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="expires" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="session_key" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="sig" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="fanpageid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="comments" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_img_comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="imgid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_img_votes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="imgid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="rating" Type="Boolean" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_img_votes_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="imgid" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="average" Type="Single" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="link_cat" Type="Int32" Nullable="false" />
+    <Property Name="link_ext" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_tags_ref">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Nullable="false" />
+    <Property Name="imgid" Type="Int32" Nullable="false" />
+    <Property Name="tagid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="avatar" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="approved" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int32" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_votes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="rating" Type="Boolean" Nullable="false" />
+    <Property Name="published" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_votes_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="average" Type="Single" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_redirect_links">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="old_url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="new_url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="referer" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="SByte" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" />
+    <Property Name="modified_date" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_schemas">
+    <Key>
+      <PropertyRef Name="extension_id" />
+      <PropertyRef Name="version_id" />
+    </Key>
+    <Property Name="extension_id" Type="Int32" Nullable="false" />
+    <Property Name="version_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_session">
+    <Key>
+      <PropertyRef Name="session_id" />
+    </Key>
+    <Property Name="session_id" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="client_id" Type="Byte" Nullable="false" />
+    <Property Name="guest" Type="Byte" />
+    <Property Name="time" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_template_styles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="template" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="client_id" Type="Boolean" Nullable="false" />
+    <Property Name="home" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_update_categories">
+    <Key>
+      <PropertyRef Name="categoryid" />
+    </Key>
+    <Property Name="categoryid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="parent" Type="Int32" />
+    <Property Name="updatesite" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ampu_update_sites">
+    <Key>
+      <PropertyRef Name="update_site_id" />
+    </Key>
+    <Property Name="update_site_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="enabled" Type="Int32" />
+    <Property Name="last_check_timestamp" Type="Int64" />
+  </EntityType>
+  <EntityType Name="ampu_update_sites_extensions">
+    <Key>
+      <PropertyRef Name="update_site_id" />
+      <PropertyRef Name="extension_id" />
+    </Key>
+    <Property Name="update_site_id" Type="Int32" Nullable="false" />
+    <Property Name="extension_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_updates">
+    <Key>
+      <PropertyRef Name="update_id" />
+    </Key>
+    <Property Name="update_id" Type="Int32" Nullable="false" />
+    <Property Name="update_site_id" Type="Int32" />
+    <Property Name="extension_id" Type="Int32" />
+    <Property Name="categoryid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="element" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="folder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="client_id" Type="SByte" />
+    <Property Name="version" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="detailsurl" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="infourl" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_user_notes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="catid" Type="Int64" Nullable="false" />
+    <Property Name="subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="body" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="SByte" Nullable="false" />
+    <Property Name="checked_out" Type="Int64" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="created_user_id" Type="Int64" Nullable="false" />
+    <Property Name="created_time" Type="DateTime" Nullable="false" />
+    <Property Name="modified_user_id" Type="Int64" Nullable="false" />
+    <Property Name="modified_time" Type="DateTime" Nullable="false" />
+    <Property Name="review_time" Type="DateTime" Nullable="false" />
+    <Property Name="publish_up" Type="DateTime" Nullable="false" />
+    <Property Name="publish_down" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_user_usergroup_map">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="group_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_usergroups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="parent_id" Type="Int64" Nullable="false" />
+    <Property Name="lft" Type="Int32" Nullable="false" />
+    <Property Name="rgt" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usertype" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="block" Type="SByte" Nullable="false" />
+    <Property Name="sendEmail" Type="SByte" />
+    <Property Name="registerDate" Type="DateTime" Nullable="false" />
+    <Property Name="lastvisitDate" Type="DateTime" Nullable="false" />
+    <Property Name="activation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="port" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_viewlevels">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="rules" Type="String" MaxLength="5120" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_weblinks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="sid" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="hits" Type="Int32" Nullable="false" />
+    <Property Name="state" Type="Boolean" Nullable="false" />
+    <Property Name="checked_out" Type="Int32" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="archived" Type="Boolean" Nullable="false" />
+    <Property Name="approved" Type="Boolean" Nullable="false" />
+    <Property Name="access" Type="Int32" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" />
+    <Property Name="created_by" Type="Int64" Nullable="false" />
+    <Property Name="created_by_alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modified" Type="DateTime" Nullable="false" />
+    <Property Name="modified_by" Type="Int64" Nullable="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="metadata" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="featured" Type="Byte" Nullable="false" />
+    <Property Name="xreference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publish_up" Type="DateTime" Nullable="false" />
+    <Property Name="publish_down" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_wf_profiles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="users" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="types" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="components" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="area" Type="SByte" Nullable="false" />
+    <Property Name="device" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="rows" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="plugins" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="published" Type="SByte" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+    <Property Name="checked_out" Type="SByte" Nullable="false" />
+    <Property Name="checked_out_time" Type="DateTime" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_xmap_items">
+    <Key>
+      <PropertyRef Name="uid" />
+      <PropertyRef Name="itemid" />
+      <PropertyRef Name="view" />
+      <PropertyRef Name="sitemap_id" />
+    </Key>
+    <Property Name="uid" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemid" Type="Int32" Nullable="false" />
+    <Property Name="view" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sitemap_id" Type="Int32" Nullable="false" />
+    <Property Name="properties" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ampu_xmap_sitemap">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="introtext" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metadesc" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="metakey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="attribs" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="selections" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="excluded_items" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="is_default" Type="Int32" />
+    <Property Name="state" Type="Int32" />
+    <Property Name="access" Type="Int32" />
+    <Property Name="created" Type="DateTime" Nullable="false" />
+    <Property Name="count_xml" Type="Int32" />
+    <Property Name="count_html" Type="Int32" />
+    <Property Name="views_xml" Type="Int32" />
+    <Property Name="views_html" Type="Int32" />
+    <Property Name="lastvisit_xml" Type="Int32" />
+    <Property Name="lastvisit_html" Type="Int32" />
+  </EntityType>
+  <EntityType Name="blank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="name_ua" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="name_en" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="Int32" />
+    <Property Name="updated_at" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="config_key" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="config_value" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="group_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_dev_direction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" />
+    <Property Name="name_ru" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="name_ua" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name_en" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pro_direction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" />
+    <Property Name="name_ru" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="name_ua" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name_en" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pro_port">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" />
+    <Property Name="name_ru" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="name_ua" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name_en" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="plan_href" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pro_project">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="port_id" Type="Int16" Nullable="false" />
+    <Property Name="direction_id" Type="Int16" Nullable="false" />
+    <Property Name="dev_direction_id" Type="Int16" Nullable="false" />
+    <Property Name="name_ru" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="name_ua" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name_en" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="investor_ru" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="investor_ua" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="investor_en" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="expected_result_ru" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="expected_result_ua" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="expected_result_en" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="dev_project_ru" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dev_project_ua" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dev_project_en" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dev_title_ru" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dev_title_ua" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dev_title_en" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tender_ru" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tender_ua" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tender_en" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contract_date_ru" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contract_date_ua" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contract_date_en" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fact_percent" Type="Int16" />
+    <Property Name="date_end_ru" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date_end_ua" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date_end_en" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pro_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_user_tokens">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="user_agent" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="token" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created" Type="Int64" Nullable="false" />
+    <Property Name="expires" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="logins" Type="Int32" Nullable="false" />
+    <Property Name="last_login" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_admin_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="time" Type="DateTime" Nullable="false" />
+    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="action" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_admin_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="lan" Type="Int32" Nullable="false" />
+    <Property Name="lan_id_for_menu" Type="Int32" Nullable="false" />
+    <Property Name="belong" Type="Int32" Nullable="false" />
+    <Property Name="p" Type="Int32" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="lan" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="belong" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bottom_logo" Type="Int32" Nullable="false" />
+    <Property Name="top_img" Type="Int32" Nullable="false" />
+    <Property Name="logo" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="lan" Type="Int32" Nullable="false" />
+    <Property Name="cat_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_files">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="content_id" Type="Int32" Nullable="false" />
+    <Property Name="file" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="filename" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="discription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="size" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="craeted_date" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="content_id" Type="Int32" Nullable="false" />
+    <Property Name="item" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="content" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="lan" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="t_logo" Type="Int32" Nullable="false" />
+    <Property Name="todey" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="characteristics" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="corridor" Type="Int32" Nullable="false" />
+    <Property Name="bot_info" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="adres" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contacts" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_lan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="lan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="menu_num" Type="Int32" Nullable="false" />
+    <Property Name="lan" Type="Int32" Nullable="false" />
+    <Property Name="belong" Type="Int32" Nullable="false" />
+    <Property Name="p" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="content_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sort_by" Type="Int32" Nullable="false" />
+    <Property Name="blog_style" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_url_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="content_id" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_url_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="menu_id" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Int32" Nullable="false" />
+    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_history">
+    <Key>
+      <PropertyRef Name="subid" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="action" />
+    </Key>
+    <Property Name="subid" Type="Int64" Nullable="false" />
+    <Property Name="date" Type="Int64" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="source" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="mailid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ampu_core_log_searches">
+    <Key>
+      <PropertyRef Name="search_term" />
+      <PropertyRef Name="hits" />
+    </Key>
+    <Property Name="search_term" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hits" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_terms_common">
+    <Key>
+      <PropertyRef Name="term" />
+      <PropertyRef Name="language" />
+    </Key>
+    <Property Name="term" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="language" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_tokens">
+    <Key>
+      <PropertyRef Name="term" />
+      <PropertyRef Name="stem" />
+      <PropertyRef Name="common" />
+      <PropertyRef Name="phrase" />
+      <PropertyRef Name="context" />
+    </Key>
+    <Property Name="term" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stem" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="common" Type="Boolean" Nullable="false" />
+    <Property Name="phrase" Type="Boolean" Nullable="false" />
+    <Property Name="context" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_tokens_aggregate">
+    <Key>
+      <PropertyRef Name="term_id" />
+      <PropertyRef Name="map_suffix" />
+      <PropertyRef Name="term" />
+      <PropertyRef Name="stem" />
+      <PropertyRef Name="common" />
+      <PropertyRef Name="phrase" />
+      <PropertyRef Name="context" />
+    </Key>
+    <Property Name="term_id" Type="Int64" Nullable="false" />
+    <Property Name="map_suffix" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="term" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stem" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="common" Type="Boolean" Nullable="false" />
+    <Property Name="phrase" Type="Boolean" Nullable="false" />
+    <Property Name="context" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_ga_dash">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="token" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_ga_dash_cache">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="data" />
+      <PropertyRef Name="expire" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="expire" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_aliases">
+    <Key>
+      <PropertyRef Name="alias" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="item" />
+      <PropertyRef Name="state" />
+    </Key>
+    <Property Name="alias" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="item" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="SByte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_keywords_map">
+    <Key>
+      <PropertyRef Name="keyword_id" />
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="topic_id" />
+    </Key>
+    <Property Name="keyword_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="topic_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_polls_users">
+    <Key>
+      <PropertyRef Name="lasttime" />
+    </Key>
+    <Property Name="pollid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="votes" Type="Int32" />
+    <Property Name="lasttime" Type="DateTime" Nullable="false" />
+    <Property Name="lastvote" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_thankyou">
+    <Key>
+      <PropertyRef Name="postid" />
+      <PropertyRef Name="userid" />
+      <PropertyRef Name="targetuserid" />
+      <PropertyRef Name="time" />
+    </Key>
+    <Property Name="postid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="targetuserid" Type="Int32" Nullable="false" />
+    <Property Name="time" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_user_read">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="topic_id" />
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="message_id" />
+      <PropertyRef Name="time" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="topic_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="message_id" Type="Int32" Nullable="false" />
+    <Property Name="time" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_user_topics">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="topic_id" />
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="posts" />
+      <PropertyRef Name="last_post_id" />
+      <PropertyRef Name="owner" />
+      <PropertyRef Name="favorite" />
+      <PropertyRef Name="subscribed" />
+      <PropertyRef Name="params" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="topic_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="posts" Type="Int32" Nullable="false" />
+    <Property Name="last_post_id" Type="Int32" Nullable="false" />
+    <Property Name="owner" Type="SByte" Nullable="false" />
+    <Property Name="favorite" Type="SByte" Nullable="false" />
+    <Property Name="subscribed" Type="SByte" Nullable="false" />
+    <Property Name="params" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_messages_cfg">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="cfg_name" />
+      <PropertyRef Name="cfg_value" />
+    </Key>
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="cfg_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cfg_value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_user_profiles">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="profile_key" />
+      <PropertyRef Name="profile_value" />
+      <PropertyRef Name="ordering" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="profile_key" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="profile_value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ordering" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_roles_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="oldUspaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ampu_acymailing_config" EntityType="Self.ampu_acymailing_config" />
+    <EntitySet Name="ampu_acymailing_fields" EntityType="Self.ampu_acymailing_fields" />
+    <EntitySet Name="ampu_acymailing_filter" EntityType="Self.ampu_acymailing_filter" />
+    <EntitySet Name="ampu_acymailing_list" EntityType="Self.ampu_acymailing_list" />
+    <EntitySet Name="ampu_acymailing_listcampaign" EntityType="Self.ampu_acymailing_listcampaign" />
+    <EntitySet Name="ampu_acymailing_listmail" EntityType="Self.ampu_acymailing_listmail" />
+    <EntitySet Name="ampu_acymailing_listsub" EntityType="Self.ampu_acymailing_listsub" />
+    <EntitySet Name="ampu_acymailing_mail" EntityType="Self.ampu_acymailing_mail" />
+    <EntitySet Name="ampu_acymailing_queue" EntityType="Self.ampu_acymailing_queue" />
+    <EntitySet Name="ampu_acymailing_rules" EntityType="Self.ampu_acymailing_rules" />
+    <EntitySet Name="ampu_acymailing_stats" EntityType="Self.ampu_acymailing_stats" />
+    <EntitySet Name="ampu_acymailing_subscriber" EntityType="Self.ampu_acymailing_subscriber" />
+    <EntitySet Name="ampu_acymailing_subscriber_copy" EntityType="Self.ampu_acymailing_subscriber_copy" />
+    <EntitySet Name="ampu_acymailing_template" EntityType="Self.ampu_acymailing_template" />
+    <EntitySet Name="ampu_acymailing_url" EntityType="Self.ampu_acymailing_url" />
+    <EntitySet Name="ampu_acymailing_urlclick" EntityType="Self.ampu_acymailing_urlclick" />
+    <EntitySet Name="ampu_acymailing_userstats" EntityType="Self.ampu_acymailing_userstats" />
+    <EntitySet Name="ampu_assets" EntityType="Self.ampu_assets" />
+    <EntitySet Name="ampu_associations" EntityType="Self.ampu_associations" />
+    <EntitySet Name="ampu_banner_clients" EntityType="Self.ampu_banner_clients" />
+    <EntitySet Name="ampu_banner_tracks" EntityType="Self.ampu_banner_tracks" />
+    <EntitySet Name="ampu_banners" EntityType="Self.ampu_banners" />
+    <EntitySet Name="ampu_categories" EntityType="Self.ampu_categories" />
+    <EntitySet Name="ampu_contact_details" EntityType="Self.ampu_contact_details" />
+    <EntitySet Name="ampu_content" EntityType="Self.ampu_content" />
+    <EntitySet Name="ampu_content_frontpage" EntityType="Self.ampu_content_frontpage" />
+    <EntitySet Name="ampu_content_rating" EntityType="Self.ampu_content_rating" />
+    <EntitySet Name="ampu_easybook" EntityType="Self.ampu_easybook" />
+    <EntitySet Name="ampu_easybook_badwords" EntityType="Self.ampu_easybook_badwords" />
+    <EntitySet Name="ampu_extensions" EntityType="Self.ampu_extensions" />
+    <EntitySet Name="ampu_finder_filters" EntityType="Self.ampu_finder_filters" />
+    <EntitySet Name="ampu_finder_links" EntityType="Self.ampu_finder_links" />
+    <EntitySet Name="ampu_finder_links_terms0" EntityType="Self.ampu_finder_links_terms0" />
+    <EntitySet Name="ampu_finder_links_terms1" EntityType="Self.ampu_finder_links_terms1" />
+    <EntitySet Name="ampu_finder_links_terms2" EntityType="Self.ampu_finder_links_terms2" />
+    <EntitySet Name="ampu_finder_links_terms3" EntityType="Self.ampu_finder_links_terms3" />
+    <EntitySet Name="ampu_finder_links_terms4" EntityType="Self.ampu_finder_links_terms4" />
+    <EntitySet Name="ampu_finder_links_terms5" EntityType="Self.ampu_finder_links_terms5" />
+    <EntitySet Name="ampu_finder_links_terms6" EntityType="Self.ampu_finder_links_terms6" />
+    <EntitySet Name="ampu_finder_links_terms7" EntityType="Self.ampu_finder_links_terms7" />
+    <EntitySet Name="ampu_finder_links_terms8" EntityType="Self.ampu_finder_links_terms8" />
+    <EntitySet Name="ampu_finder_links_terms9" EntityType="Self.ampu_finder_links_terms9" />
+    <EntitySet Name="ampu_finder_links_termsa" EntityType="Self.ampu_finder_links_termsa" />
+    <EntitySet Name="ampu_finder_links_termsb" EntityType="Self.ampu_finder_links_termsb" />
+    <EntitySet Name="ampu_finder_links_termsc" EntityType="Self.ampu_finder_links_termsc" />
+    <EntitySet Name="ampu_finder_links_termsd" EntityType="Self.ampu_finder_links_termsd" />
+    <EntitySet Name="ampu_finder_links_termse" EntityType="Self.ampu_finder_links_termse" />
+    <EntitySet Name="ampu_finder_links_termsf" EntityType="Self.ampu_finder_links_termsf" />
+    <EntitySet Name="ampu_finder_taxonomy" EntityType="Self.ampu_finder_taxonomy" />
+    <EntitySet Name="ampu_finder_taxonomy_map" EntityType="Self.ampu_finder_taxonomy_map" />
+    <EntitySet Name="ampu_finder_terms" EntityType="Self.ampu_finder_terms" />
+    <EntitySet Name="ampu_finder_types" EntityType="Self.ampu_finder_types" />
+    <EntitySet Name="ampu_jcomments" EntityType="Self.ampu_jcomments" />
+    <EntitySet Name="ampu_jcomments_blacklist" EntityType="Self.ampu_jcomments_blacklist" />
+    <EntitySet Name="ampu_jcomments_custom_bbcodes" EntityType="Self.ampu_jcomments_custom_bbcodes" />
+    <EntitySet Name="ampu_jcomments_objects" EntityType="Self.ampu_jcomments_objects" />
+    <EntitySet Name="ampu_jcomments_reports" EntityType="Self.ampu_jcomments_reports" />
+    <EntitySet Name="ampu_jcomments_settings" EntityType="Self.ampu_jcomments_settings" />
+    <EntitySet Name="ampu_jcomments_subscriptions" EntityType="Self.ampu_jcomments_subscriptions" />
+    <EntitySet Name="ampu_jcomments_version" EntityType="Self.ampu_jcomments_version" />
+    <EntitySet Name="ampu_jcomments_votes" EntityType="Self.ampu_jcomments_votes" />
+    <EntitySet Name="ampu_kunena_announcement" EntityType="Self.ampu_kunena_announcement" />
+    <EntitySet Name="ampu_kunena_attachments" EntityType="Self.ampu_kunena_attachments" />
+    <EntitySet Name="ampu_kunena_categories" EntityType="Self.ampu_kunena_categories" />
+    <EntitySet Name="ampu_kunena_configuration" EntityType="Self.ampu_kunena_configuration" />
+    <EntitySet Name="ampu_kunena_keywords" EntityType="Self.ampu_kunena_keywords" />
+    <EntitySet Name="ampu_kunena_messages" EntityType="Self.ampu_kunena_messages" />
+    <EntitySet Name="ampu_kunena_messages_text" EntityType="Self.ampu_kunena_messages_text" />
+    <EntitySet Name="ampu_kunena_polls" EntityType="Self.ampu_kunena_polls" />
+    <EntitySet Name="ampu_kunena_polls_options" EntityType="Self.ampu_kunena_polls_options" />
+    <EntitySet Name="ampu_kunena_ranks" EntityType="Self.ampu_kunena_ranks" />
+    <EntitySet Name="ampu_kunena_sessions" EntityType="Self.ampu_kunena_sessions" />
+    <EntitySet Name="ampu_kunena_smileys" EntityType="Self.ampu_kunena_smileys" />
+    <EntitySet Name="ampu_kunena_topics" EntityType="Self.ampu_kunena_topics" />
+    <EntitySet Name="ampu_kunena_user_categories" EntityType="Self.ampu_kunena_user_categories" />
+    <EntitySet Name="ampu_kunena_users" EntityType="Self.ampu_kunena_users" />
+    <EntitySet Name="ampu_kunena_users_banned" EntityType="Self.ampu_kunena_users_banned" />
+    <EntitySet Name="ampu_kunena_version" EntityType="Self.ampu_kunena_version" />
+    <EntitySet Name="ampu_languages" EntityType="Self.ampu_languages" />
+    <EntitySet Name="ampu_menu" EntityType="Self.ampu_menu" />
+    <EntitySet Name="ampu_menu_types" EntityType="Self.ampu_menu_types" />
+    <EntitySet Name="ampu_messages" EntityType="Self.ampu_messages" />
+    <EntitySet Name="ampu_modules" EntityType="Self.ampu_modules" />
+    <EntitySet Name="ampu_modules_menu" EntityType="Self.ampu_modules_menu" />
+    <EntitySet Name="ampu_newsfeeds" EntityType="Self.ampu_newsfeeds" />
+    <EntitySet Name="ampu_overrider" EntityType="Self.ampu_overrider" />
+    <EntitySet Name="ampu_phocagallery" EntityType="Self.ampu_phocagallery" />
+    <EntitySet Name="ampu_phocagallery_categories" EntityType="Self.ampu_phocagallery_categories" />
+    <EntitySet Name="ampu_phocagallery_comments" EntityType="Self.ampu_phocagallery_comments" />
+    <EntitySet Name="ampu_phocagallery_fb_users" EntityType="Self.ampu_phocagallery_fb_users" />
+    <EntitySet Name="ampu_phocagallery_img_comments" EntityType="Self.ampu_phocagallery_img_comments" />
+    <EntitySet Name="ampu_phocagallery_img_votes" EntityType="Self.ampu_phocagallery_img_votes" />
+    <EntitySet Name="ampu_phocagallery_img_votes_statistics" EntityType="Self.ampu_phocagallery_img_votes_statistics" />
+    <EntitySet Name="ampu_phocagallery_tags" EntityType="Self.ampu_phocagallery_tags" />
+    <EntitySet Name="ampu_phocagallery_tags_ref" EntityType="Self.ampu_phocagallery_tags_ref" />
+    <EntitySet Name="ampu_phocagallery_user" EntityType="Self.ampu_phocagallery_user" />
+    <EntitySet Name="ampu_phocagallery_votes" EntityType="Self.ampu_phocagallery_votes" />
+    <EntitySet Name="ampu_phocagallery_votes_statistics" EntityType="Self.ampu_phocagallery_votes_statistics" />
+    <EntitySet Name="ampu_redirect_links" EntityType="Self.ampu_redirect_links" />
+    <EntitySet Name="ampu_schemas" EntityType="Self.ampu_schemas" />
+    <EntitySet Name="ampu_session" EntityType="Self.ampu_session" />
+    <EntitySet Name="ampu_template_styles" EntityType="Self.ampu_template_styles" />
+    <EntitySet Name="ampu_update_categories" EntityType="Self.ampu_update_categories" />
+    <EntitySet Name="ampu_update_sites" EntityType="Self.ampu_update_sites" />
+    <EntitySet Name="ampu_update_sites_extensions" EntityType="Self.ampu_update_sites_extensions" />
+    <EntitySet Name="ampu_updates" EntityType="Self.ampu_updates" />
+    <EntitySet Name="ampu_user_notes" EntityType="Self.ampu_user_notes" />
+    <EntitySet Name="ampu_user_usergroup_map" EntityType="Self.ampu_user_usergroup_map" />
+    <EntitySet Name="ampu_usergroups" EntityType="Self.ampu_usergroups" />
+    <EntitySet Name="ampu_users" EntityType="Self.ampu_users" />
+    <EntitySet Name="ampu_viewlevels" EntityType="Self.ampu_viewlevels" />
+    <EntitySet Name="ampu_weblinks" EntityType="Self.ampu_weblinks" />
+    <EntitySet Name="ampu_wf_profiles" EntityType="Self.ampu_wf_profiles" />
+    <EntitySet Name="ampu_xmap_items" EntityType="Self.ampu_xmap_items" />
+    <EntitySet Name="ampu_xmap_sitemap" EntityType="Self.ampu_xmap_sitemap" />
+    <EntitySet Name="blank" EntityType="Self.blank" />
+    <EntitySet Name="history" EntityType="Self.history" />
+    <EntitySet Name="pro_config" EntityType="Self.pro_config" />
+    <EntitySet Name="pro_dev_direction" EntityType="Self.pro_dev_direction" />
+    <EntitySet Name="pro_direction" EntityType="Self.pro_direction" />
+    <EntitySet Name="pro_port" EntityType="Self.pro_port" />
+    <EntitySet Name="pro_project" EntityType="Self.pro_project" />
+    <EntitySet Name="pro_roles" EntityType="Self.pro_roles" />
+    <EntitySet Name="pro_user_tokens" EntityType="Self.pro_user_tokens" />
+    <EntitySet Name="pro_users" EntityType="Self.pro_users" />
+    <EntitySet Name="site_admin_log" EntityType="Self.site_admin_log" />
+    <EntitySet Name="site_admin_menu" EntityType="Self.site_admin_menu" />
+    <EntitySet Name="site_category" EntityType="Self.site_category" />
+    <EntitySet Name="site_config" EntityType="Self.site_config" />
+    <EntitySet Name="site_content" EntityType="Self.site_content" />
+    <EntitySet Name="site_files" EntityType="Self.site_files" />
+    <EntitySet Name="site_images" EntityType="Self.site_images" />
+    <EntitySet Name="site_info" EntityType="Self.site_info" />
+    <EntitySet Name="site_lan" EntityType="Self.site_lan" />
+    <EntitySet Name="site_menu" EntityType="Self.site_menu" />
+    <EntitySet Name="site_url_content" EntityType="Self.site_url_content" />
+    <EntitySet Name="site_url_menu" EntityType="Self.site_url_menu" />
+    <EntitySet Name="site_users" EntityType="Self.site_users" />
+    <EntitySet Name="ampu_acymailing_history" EntityType="Self.ampu_acymailing_history" />
+    <EntitySet Name="ampu_core_log_searches" EntityType="Self.ampu_core_log_searches" />
+    <EntitySet Name="ampu_finder_terms_common" EntityType="Self.ampu_finder_terms_common" />
+    <EntitySet Name="ampu_finder_tokens" EntityType="Self.ampu_finder_tokens" />
+    <EntitySet Name="ampu_finder_tokens_aggregate" EntityType="Self.ampu_finder_tokens_aggregate" />
+    <EntitySet Name="ampu_ga_dash" EntityType="Self.ampu_ga_dash" />
+    <EntitySet Name="ampu_ga_dash_cache" EntityType="Self.ampu_ga_dash_cache" />
+    <EntitySet Name="ampu_kunena_aliases" EntityType="Self.ampu_kunena_aliases" />
+    <EntitySet Name="ampu_kunena_keywords_map" EntityType="Self.ampu_kunena_keywords_map" />
+    <EntitySet Name="ampu_kunena_polls_users" EntityType="Self.ampu_kunena_polls_users" />
+    <EntitySet Name="ampu_kunena_thankyou" EntityType="Self.ampu_kunena_thankyou" />
+    <EntitySet Name="ampu_kunena_user_read" EntityType="Self.ampu_kunena_user_read" />
+    <EntitySet Name="ampu_kunena_user_topics" EntityType="Self.ampu_kunena_user_topics" />
+    <EntitySet Name="ampu_messages_cfg" EntityType="Self.ampu_messages_cfg" />
+    <EntitySet Name="ampu_user_profiles" EntityType="Self.ampu_user_profiles" />
+    <EntitySet Name="pro_roles_users" EntityType="Self.pro_roles_users" />
+  </EntityContainer>
+</Schema>

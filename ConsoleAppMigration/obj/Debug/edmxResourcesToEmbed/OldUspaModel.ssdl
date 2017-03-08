@@ -1,0 +1,2601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="uspaOldModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="ampu_acymailing_config">
+    <Key>
+      <PropertyRef Name="namekey" />
+    </Key>
+    <Property Name="namekey" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="value" Type="text" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_fields">
+    <Key>
+      <PropertyRef Name="fieldid" />
+    </Key>
+    <Property Name="fieldid" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fieldname" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="namekey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="value" Type="text" Nullable="false" />
+    <Property Name="published" Type="utinyint" Nullable="false" />
+    <Property Name="ordering" Type="usmallint" />
+    <Property Name="options" Type="text" />
+    <Property Name="core" Type="utinyint" Nullable="false" />
+    <Property Name="required" Type="utinyint" Nullable="false" />
+    <Property Name="backend" Type="utinyint" Nullable="false" />
+    <Property Name="frontcomp" Type="utinyint" Nullable="false" />
+    <Property Name="default" Type="varchar" MaxLength="250" />
+    <Property Name="listing" Type="utinyint" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_filter">
+    <Key>
+      <PropertyRef Name="filid" />
+    </Key>
+    <Property Name="filid" Type="umediumint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="250" />
+    <Property Name="description" Type="text" />
+    <Property Name="published" Type="utinyint" />
+    <Property Name="lasttime" Type="uint" />
+    <Property Name="trigger" Type="text" />
+    <Property Name="report" Type="text" />
+    <Property Name="action" Type="text" />
+    <Property Name="filter" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_acymailing_history' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_acymailing_history">
+    <Key>
+      <PropertyRef Name="subid" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="action" />
+    </Key>
+    <Property Name="subid" Type="uint" Nullable="false" />
+    <Property Name="date" Type="uint" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="50" />
+    <Property Name="action" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="data" Type="text" />
+    <Property Name="source" Type="text" />
+    <Property Name="mailid" Type="umediumint" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_list">
+    <Key>
+      <PropertyRef Name="listid" />
+    </Key>
+    <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="ordering" Type="usmallint" />
+    <Property Name="listid" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="published" Type="tinyint" />
+    <Property Name="userid" Type="uint" />
+    <Property Name="alias" Type="varchar" MaxLength="250" />
+    <Property Name="color" Type="varchar" MaxLength="30" />
+    <Property Name="visible" Type="tinyint" Nullable="false" />
+    <Property Name="welmailid" Type="mediumint" />
+    <Property Name="unsubmailid" Type="mediumint" />
+    <Property Name="type" Type="enum" Nullable="false" />
+    <Property Name="access_sub" Type="varchar" MaxLength="250" />
+    <Property Name="access_manage" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="languages" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_listcampaign">
+    <Key>
+      <PropertyRef Name="campaignid" />
+      <PropertyRef Name="listid" />
+    </Key>
+    <Property Name="campaignid" Type="usmallint" Nullable="false" />
+    <Property Name="listid" Type="usmallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_listmail">
+    <Key>
+      <PropertyRef Name="listid" />
+      <PropertyRef Name="mailid" />
+    </Key>
+    <Property Name="listid" Type="usmallint" Nullable="false" />
+    <Property Name="mailid" Type="umediumint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_listsub">
+    <Key>
+      <PropertyRef Name="listid" />
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="listid" Type="usmallint" Nullable="false" />
+    <Property Name="subid" Type="uint" Nullable="false" />
+    <Property Name="subdate" Type="uint" />
+    <Property Name="unsubdate" Type="uint" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_mail">
+    <Key>
+      <PropertyRef Name="mailid" />
+    </Key>
+    <Property Name="mailid" Type="umediumint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subject" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="body" Type="longtext" Nullable="false" />
+    <Property Name="altbody" Type="longtext" Nullable="false" />
+    <Property Name="published" Type="tinyint" />
+    <Property Name="senddate" Type="uint" />
+    <Property Name="created" Type="uint" />
+    <Property Name="fromname" Type="varchar" MaxLength="250" />
+    <Property Name="fromemail" Type="varchar" MaxLength="250" />
+    <Property Name="replyname" Type="varchar" MaxLength="250" />
+    <Property Name="replyemail" Type="varchar" MaxLength="250" />
+    <Property Name="type" Type="enum" Nullable="false" />
+    <Property Name="visible" Type="tinyint" Nullable="false" />
+    <Property Name="userid" Type="uint" />
+    <Property Name="alias" Type="varchar" MaxLength="250" />
+    <Property Name="attach" Type="text" />
+    <Property Name="html" Type="tinyint" Nullable="false" />
+    <Property Name="tempid" Type="smallint" Nullable="false" />
+    <Property Name="key" Type="varchar" MaxLength="200" />
+    <Property Name="frequency" Type="varchar" MaxLength="50" />
+    <Property Name="params" Type="text" />
+    <Property Name="sentby" Type="uint" />
+    <Property Name="metakey" Type="text" />
+    <Property Name="metadesc" Type="text" />
+    <Property Name="filter" Type="text" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_queue">
+    <Key>
+      <PropertyRef Name="subid" />
+      <PropertyRef Name="mailid" />
+    </Key>
+    <Property Name="senddate" Type="uint" Nullable="false" />
+    <Property Name="subid" Type="uint" Nullable="false" />
+    <Property Name="mailid" Type="umediumint" Nullable="false" />
+    <Property Name="priority" Type="utinyint" />
+    <Property Name="try" Type="utinyint" Nullable="false" />
+    <Property Name="paramqueue" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_rules">
+    <Key>
+      <PropertyRef Name="ruleid" />
+    </Key>
+    <Property Name="ruleid" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="ordering" Type="smallint" />
+    <Property Name="regex" Type="text" Nullable="false" />
+    <Property Name="executed_on" Type="text" Nullable="false" />
+    <Property Name="action_message" Type="text" Nullable="false" />
+    <Property Name="action_user" Type="text" Nullable="false" />
+    <Property Name="published" Type="utinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_stats">
+    <Key>
+      <PropertyRef Name="mailid" />
+    </Key>
+    <Property Name="mailid" Type="umediumint" Nullable="false" />
+    <Property Name="senthtml" Type="uint" Nullable="false" />
+    <Property Name="senttext" Type="uint" Nullable="false" />
+    <Property Name="senddate" Type="uint" Nullable="false" />
+    <Property Name="openunique" Type="umediumint" Nullable="false" />
+    <Property Name="opentotal" Type="uint" Nullable="false" />
+    <Property Name="bounceunique" Type="umediumint" Nullable="false" />
+    <Property Name="fail" Type="umediumint" Nullable="false" />
+    <Property Name="clicktotal" Type="uint" Nullable="false" />
+    <Property Name="clickunique" Type="umediumint" Nullable="false" />
+    <Property Name="unsub" Type="umediumint" Nullable="false" />
+    <Property Name="forward" Type="umediumint" Nullable="false" />
+    <Property Name="bouncedetails" Type="text" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_subscriber">
+    <Key>
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="subid" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="userid" Type="uint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="created" Type="uint" />
+    <Property Name="confirmed" Type="tinyint" Nullable="false" />
+    <Property Name="enabled" Type="tinyint" Nullable="false" />
+    <Property Name="accept" Type="tinyint" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="100" />
+    <Property Name="html" Type="tinyint" Nullable="false" />
+    <Property Name="key" Type="varchar" MaxLength="250" />
+    <Property Name="confirmed_date" Type="uint" Nullable="false" />
+    <Property Name="confirmed_ip" Type="varchar" MaxLength="100" />
+    <Property Name="lastopen_date" Type="uint" Nullable="false" />
+    <Property Name="lastclick_date" Type="uint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_subscriber_copy">
+    <Key>
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="subid" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="userid" Type="uint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="created" Type="uint" />
+    <Property Name="confirmed" Type="tinyint" Nullable="false" />
+    <Property Name="enabled" Type="tinyint" Nullable="false" />
+    <Property Name="accept" Type="tinyint" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="100" />
+    <Property Name="html" Type="tinyint" Nullable="false" />
+    <Property Name="key" Type="varchar" MaxLength="250" />
+    <Property Name="confirmed_date" Type="uint" Nullable="false" />
+    <Property Name="confirmed_ip" Type="varchar" MaxLength="100" />
+    <Property Name="lastopen_date" Type="uint" Nullable="false" />
+    <Property Name="lastclick_date" Type="uint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_template">
+    <Key>
+      <PropertyRef Name="tempid" />
+    </Key>
+    <Property Name="tempid" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="250" />
+    <Property Name="description" Type="text" />
+    <Property Name="body" Type="longtext" />
+    <Property Name="altbody" Type="longtext" />
+    <Property Name="created" Type="uint" />
+    <Property Name="published" Type="tinyint" Nullable="false" />
+    <Property Name="premium" Type="tinyint" Nullable="false" />
+    <Property Name="ordering" Type="usmallint" />
+    <Property Name="namekey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="styles" Type="text" />
+    <Property Name="subject" Type="varchar" MaxLength="250" />
+    <Property Name="stylesheet" Type="text" />
+    <Property Name="fromname" Type="varchar" MaxLength="250" />
+    <Property Name="fromemail" Type="varchar" MaxLength="250" />
+    <Property Name="replyname" Type="varchar" MaxLength="250" />
+    <Property Name="replyemail" Type="varchar" MaxLength="250" />
+    <Property Name="thumb" Type="varchar" MaxLength="250" />
+    <Property Name="readmore" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_url">
+    <Key>
+      <PropertyRef Name="urlid" />
+    </Key>
+    <Property Name="urlid" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="url" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_urlclick">
+    <Key>
+      <PropertyRef Name="urlid" />
+      <PropertyRef Name="mailid" />
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="urlid" Type="uint" Nullable="false" />
+    <Property Name="mailid" Type="umediumint" Nullable="false" />
+    <Property Name="click" Type="usmallint" Nullable="false" />
+    <Property Name="subid" Type="uint" Nullable="false" />
+    <Property Name="date" Type="uint" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ampu_acymailing_userstats">
+    <Key>
+      <PropertyRef Name="mailid" />
+      <PropertyRef Name="subid" />
+    </Key>
+    <Property Name="mailid" Type="umediumint" Nullable="false" />
+    <Property Name="subid" Type="uint" Nullable="false" />
+    <Property Name="html" Type="utinyint" Nullable="false" />
+    <Property Name="sent" Type="utinyint" Nullable="false" />
+    <Property Name="senddate" Type="uint" Nullable="false" />
+    <Property Name="open" Type="utinyint" Nullable="false" />
+    <Property Name="opendate" Type="int" Nullable="false" />
+    <Property Name="bounce" Type="tinyint" Nullable="false" />
+    <Property Name="fail" Type="tinyint" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ampu_assets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="lft" Type="int" Nullable="false" />
+    <Property Name="rgt" Type="int" Nullable="false" />
+    <Property Name="level" Type="uint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="rules" Type="varchar" MaxLength="5120" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_associations">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="context" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="context" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="key" Type="char" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_banner_clients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="contact" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="extrainfo" Type="text" Nullable="false" />
+    <Property Name="state" Type="tinyint" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="metakey" Type="text" Nullable="false" />
+    <Property Name="own_prefix" Type="tinyint" Nullable="false" />
+    <Property Name="metakey_prefix" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="purchase_type" Type="tinyint" Nullable="false" />
+    <Property Name="track_clicks" Type="tinyint" Nullable="false" />
+    <Property Name="track_impressions" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_banner_tracks">
+    <Key>
+      <PropertyRef Name="track_date" />
+      <PropertyRef Name="track_type" />
+      <PropertyRef Name="banner_id" />
+    </Key>
+    <Property Name="track_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="track_type" Type="uint" Nullable="false" />
+    <Property Name="banner_id" Type="uint" Nullable="false" />
+    <Property Name="count" Type="uint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_banners">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cid" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="imptotal" Type="int" Nullable="false" />
+    <Property Name="impmade" Type="int" Nullable="false" />
+    <Property Name="clicks" Type="int" Nullable="false" />
+    <Property Name="clickurl" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="state" Type="tinyint" Nullable="false" />
+    <Property Name="catid" Type="uint" Nullable="false" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="custombannercode" Type="varchar" MaxLength="2048" Nullable="false" />
+    <Property Name="sticky" Type="bool" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="metakey" Type="text" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="own_prefix" Type="bool" Nullable="false" />
+    <Property Name="metakey_prefix" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="purchase_type" Type="tinyint" Nullable="false" />
+    <Property Name="track_clicks" Type="tinyint" Nullable="false" />
+    <Property Name="track_impressions" Type="tinyint" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_up" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_down" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="reset" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="asset_id" Type="uint" Nullable="false" />
+    <Property Name="parent_id" Type="uint" Nullable="false" />
+    <Property Name="lft" Type="int" Nullable="false" />
+    <Property Name="rgt" Type="int" Nullable="false" />
+    <Property Name="level" Type="uint" Nullable="false" />
+    <Property Name="path" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="extension" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="note" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="mediumtext" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="access" Type="uint" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="metadesc" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="metakey" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="metadata" Type="varchar" MaxLength="2048" Nullable="false" />
+    <Property Name="created_user_id" Type="uint" Nullable="false" />
+    <Property Name="created_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="modified_user_id" Type="uint" Nullable="false" />
+    <Property Name="modified_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="hits" Type="uint" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_contact_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="con_position" Type="varchar" MaxLength="255" />
+    <Property Name="address" Type="text" />
+    <Property Name="suburb" Type="varchar" MaxLength="100" />
+    <Property Name="state" Type="varchar" MaxLength="100" />
+    <Property Name="country" Type="varchar" MaxLength="100" />
+    <Property Name="postcode" Type="varchar" MaxLength="100" />
+    <Property Name="telephone" Type="varchar" MaxLength="255" />
+    <Property Name="fax" Type="varchar" MaxLength="255" />
+    <Property Name="misc" Type="mediumtext" />
+    <Property Name="image" Type="varchar" MaxLength="255" />
+    <Property Name="imagepos" Type="varchar" MaxLength="20" />
+    <Property Name="email_to" Type="varchar" MaxLength="255" />
+    <Property Name="default_con" Type="bool" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="access" Type="uint" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="webpage" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sortname1" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sortname2" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sortname3" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="created_by" Type="uint" Nullable="false" />
+    <Property Name="created_by_alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="modified" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="modified_by" Type="uint" Nullable="false" />
+    <Property Name="metakey" Type="text" Nullable="false" />
+    <Property Name="metadesc" Type="text" Nullable="false" />
+    <Property Name="metadata" Type="text" Nullable="false" />
+    <Property Name="featured" Type="utinyint" Nullable="false" />
+    <Property Name="xreference" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="publish_up" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_down" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="asset_id" Type="uint" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="title_alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="introtext" Type="mediumtext" Nullable="false" />
+    <Property Name="fulltext" Type="mediumtext" Nullable="false" />
+    <Property Name="state" Type="tinyint" Nullable="false" />
+    <Property Name="sectionid" Type="uint" Nullable="false" />
+    <Property Name="mask" Type="uint" Nullable="false" />
+    <Property Name="catid" Type="uint" Nullable="false" />
+    <Property Name="created" Type="datetime" Precision="0" />
+    <Property Name="created_by" Type="uint" Nullable="false" />
+    <Property Name="created_by_alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="modified" Type="datetime" Precision="0" />
+    <Property Name="modified_by" Type="uint" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" />
+    <Property Name="publish_up" Type="datetime" Precision="0" />
+    <Property Name="images" Type="text" Nullable="false" />
+    <Property Name="publish_down" Type="datetime" Precision="0" />
+    <Property Name="urls" Type="text" Nullable="false" />
+    <Property Name="attribs" Type="varchar" MaxLength="5120" Nullable="false" />
+    <Property Name="version" Type="uint" Nullable="false" />
+    <Property Name="parentid" Type="uint" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="metakey" Type="text" Nullable="false" />
+    <Property Name="metadesc" Type="text" Nullable="false" />
+    <Property Name="access" Type="uint" Nullable="false" />
+    <Property Name="hits" Type="uint" Nullable="false" />
+    <Property Name="metadata" Type="text" Nullable="false" />
+    <Property Name="featured" Type="utinyint" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="xreference" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_content_frontpage">
+    <Key>
+      <PropertyRef Name="content_id" />
+    </Key>
+    <Property Name="content_id" Type="int" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_content_rating">
+    <Key>
+      <PropertyRef Name="content_id" />
+    </Key>
+    <Property Name="content_id" Type="int" Nullable="false" />
+    <Property Name="rating_sum" Type="uint" Nullable="false" />
+    <Property Name="rating_count" Type="uint" Nullable="false" />
+    <Property Name="lastip" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_core_log_searches' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_core_log_searches">
+    <Key>
+      <PropertyRef Name="search_term" />
+      <PropertyRef Name="hits" />
+    </Key>
+    <Property Name="search_term" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="hits" Type="uint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_easybook">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gbip" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="gbname" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="gbmail" Type="varchar" MaxLength="60" />
+    <Property Name="gbmailshow" Type="bool" Nullable="false" />
+    <Property Name="gbloca" Type="varchar" MaxLength="50" />
+    <Property Name="gbpage" Type="varchar" MaxLength="150" />
+    <Property Name="gbvote" Type="int" />
+    <Property Name="gbtext" Type="text" Nullable="false" />
+    <Property Name="gbdate" Type="datetime" Precision="0" />
+    <Property Name="gbtitle" Type="varchar" MaxLength="50" />
+    <Property Name="gbcomment" Type="text" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="gbicq" Type="varchar" MaxLength="20" />
+    <Property Name="gbaim" Type="varchar" MaxLength="50" />
+    <Property Name="gbmsn" Type="varchar" MaxLength="50" />
+    <Property Name="gbyah" Type="varchar" MaxLength="50" />
+    <Property Name="gbskype" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ampu_easybook_badwords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="word" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_extensions">
+    <Key>
+      <PropertyRef Name="extension_id" />
+    </Key>
+    <Property Name="extension_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="element" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="folder" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="client_id" Type="tinyint" Nullable="false" />
+    <Property Name="enabled" Type="tinyint" Nullable="false" />
+    <Property Name="access" Type="uint" Nullable="false" />
+    <Property Name="protected" Type="tinyint" Nullable="false" />
+    <Property Name="manifest_cache" Type="text" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="custom_data" Type="text" Nullable="false" />
+    <Property Name="system_data" Type="text" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" />
+    <Property Name="state" Type="int" />
+  </EntityType>
+  <EntityType Name="ampu_finder_filters">
+    <Key>
+      <PropertyRef Name="filter_id" />
+    </Key>
+    <Property Name="filter_id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="state" Type="bool" Nullable="false" />
+    <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="created_by" Type="uint" Nullable="false" />
+    <Property Name="created_by_alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="modified" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="modified_by" Type="uint" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="map_count" Type="uint" Nullable="false" />
+    <Property Name="data" Type="text" Nullable="false" />
+    <Property Name="params" Type="mediumtext" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'udouble' is currently not supported for the target Entity Framework version; the column 'list_price' in the table 'def.uspa.ampu_finder_links' was excluded.
+warning 6005: The data type 'udouble' is currently not supported for the target Entity Framework version; the column 'sale_price' in the table 'def.uspa.ampu_finder_links' was excluded.-->
+  <EntityType Name="ampu_finder_links">
+    <Key>
+      <PropertyRef Name="link_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="route" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="indexdate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="md5sum" Type="varchar" MaxLength="32" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="state" Type="int" />
+    <Property Name="access" Type="int" />
+    <Property Name="language" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="publish_start_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_end_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="start_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="end_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="object" Type="mediumblob" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms0' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms0">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms1' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms1">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms2' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms2">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms3' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms3">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms4' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms4">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms5' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms5">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms6' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms6">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms7' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms7">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms8' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms8">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_terms9' was excluded.-->
+  <EntityType Name="ampu_finder_links_terms9">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_termsa' was excluded.-->
+  <EntityType Name="ampu_finder_links_termsa">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_termsb' was excluded.-->
+  <EntityType Name="ampu_finder_links_termsb">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_termsc' was excluded.-->
+  <EntityType Name="ampu_finder_links_termsc">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_termsd' was excluded.-->
+  <EntityType Name="ampu_finder_links_termsd">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_termse' was excluded.-->
+  <EntityType Name="ampu_finder_links_termse">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_links_termsf' was excluded.-->
+  <EntityType Name="ampu_finder_links_termsf">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="term_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_taxonomy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parent_id" Type="uint" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="state" Type="bool" Nullable="false" />
+    <Property Name="access" Type="bool" Nullable="false" />
+    <Property Name="ordering" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_taxonomy_map">
+    <Key>
+      <PropertyRef Name="link_id" />
+      <PropertyRef Name="node_id" />
+    </Key>
+    <Property Name="link_id" Type="uint" Nullable="false" />
+    <Property Name="node_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_terms' was excluded.-->
+  <EntityType Name="ampu_finder_terms">
+    <Key>
+      <PropertyRef Name="term_id" />
+    </Key>
+    <Property Name="term_id" Type="uint" Nullable="false" />
+    <Property Name="term" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="stem" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="common" Type="bool" Nullable="false" />
+    <Property Name="phrase" Type="bool" Nullable="false" />
+    <Property Name="soundex" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="links" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_finder_terms_common' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_finder_terms_common">
+    <Key>
+      <PropertyRef Name="term" />
+      <PropertyRef Name="language" />
+    </Key>
+    <Property Name="term" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="language" Type="varchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'weight' in the table 'def.uspa.ampu_finder_tokens' was excluded.
+warning 6002: The table/view 'def.uspa.ampu_finder_tokens' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_finder_tokens">
+    <Key>
+      <PropertyRef Name="term" />
+      <PropertyRef Name="stem" />
+      <PropertyRef Name="common" />
+      <PropertyRef Name="phrase" />
+      <PropertyRef Name="context" />
+    </Key>
+    <Property Name="term" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="stem" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="common" Type="bool" Nullable="false" />
+    <Property Name="phrase" Type="bool" Nullable="false" />
+    <Property Name="context" Type="bool" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'term_weight' in the table 'def.uspa.ampu_finder_tokens_aggregate' was excluded.
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'context_weight' in the table 'def.uspa.ampu_finder_tokens_aggregate' was excluded.
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'total_weight' in the table 'def.uspa.ampu_finder_tokens_aggregate' was excluded.
+warning 6002: The table/view 'def.uspa.ampu_finder_tokens_aggregate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_finder_tokens_aggregate">
+    <Key>
+      <PropertyRef Name="term_id" />
+      <PropertyRef Name="map_suffix" />
+      <PropertyRef Name="term" />
+      <PropertyRef Name="stem" />
+      <PropertyRef Name="common" />
+      <PropertyRef Name="phrase" />
+      <PropertyRef Name="context" />
+    </Key>
+    <Property Name="term_id" Type="uint" Nullable="false" />
+    <Property Name="map_suffix" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="term" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="stem" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="common" Type="bool" Nullable="false" />
+    <Property Name="phrase" Type="bool" Nullable="false" />
+    <Property Name="context" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_finder_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="mime" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_ga_dash' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_ga_dash">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="token" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="token" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_ga_dash_cache' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_ga_dash_cache">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="data" />
+      <PropertyRef Name="expire" />
+    </Key>
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="data" Type="text" Nullable="false" />
+    <Property Name="expire" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="parent" Type="uint" Nullable="false" />
+    <Property Name="thread_id" Type="uint" Nullable="false" />
+    <Property Name="path" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="level" Type="bool" Nullable="false" />
+    <Property Name="object_id" Type="uint" Nullable="false" />
+    <Property Name="object_group" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="object_params" Type="text" Nullable="false" />
+    <Property Name="lang" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="userid" Type="uint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="homepage" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="comment" Type="text" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="39" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="isgood" Type="smallint" Nullable="false" />
+    <Property Name="ispoor" Type="smallint" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="deleted" Type="bool" Nullable="false" />
+    <Property Name="subscribe" Type="bool" Nullable="false" />
+    <Property Name="source" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="source_id" Type="uint" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="editor" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_blacklist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="39" Nullable="false" />
+    <Property Name="userid" Type="uint" Nullable="false" />
+    <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="created_by" Type="uint" Nullable="false" />
+    <Property Name="expire" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="reason" Type="tinytext" Nullable="false" />
+    <Property Name="notes" Type="tinytext" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="editor" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_custom_bbcodes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="simple_pattern" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="simple_replacement_html" Type="text" Nullable="false" />
+    <Property Name="simple_replacement_text" Type="text" Nullable="false" />
+    <Property Name="pattern" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="replacement_html" Type="text" Nullable="false" />
+    <Property Name="replacement_text" Type="text" Nullable="false" />
+    <Property Name="button_acl" Type="text" Nullable="false" />
+    <Property Name="button_open_tag" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="button_close_tag" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="button_title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="button_prompt" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="button_image" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="button_css" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="button_enabled" Type="bool" Nullable="false" />
+    <Property Name="ordering" Type="uint" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_objects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="object_id" Type="uint" Nullable="false" />
+    <Property Name="object_group" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="lang" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="link" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="access" Type="utinyint" Nullable="false" />
+    <Property Name="userid" Type="uint" Nullable="false" />
+    <Property Name="expired" Type="utinyint" Nullable="false" />
+    <Property Name="modified" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_reports">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="commentid" Type="uint" Nullable="false" />
+    <Property Name="userid" Type="uint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="39" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="reason" Type="tinytext" Nullable="false" />
+    <Property Name="status" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_settings">
+    <Key>
+      <PropertyRef Name="component" />
+      <PropertyRef Name="lang" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="component" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lang" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="value" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_subscriptions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="object_id" Type="uint" Nullable="false" />
+    <Property Name="object_group" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="lang" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="userid" Type="uint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="hash" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="source" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_version">
+    <Key>
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="version" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="previous" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="installed" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="updated" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_jcomments_votes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="commentid" Type="uint" Nullable="false" />
+    <Property Name="userid" Type="uint" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="39" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="value" Type="bool" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_kunena_aliases' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_kunena_aliases">
+    <Key>
+      <PropertyRef Name="alias" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="item" />
+      <PropertyRef Name="state" />
+    </Key>
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="item" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="state" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_announcement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="tinytext" Nullable="false" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="sdescription" Type="text" Nullable="false" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="ordering" Type="tinyint" Nullable="false" />
+    <Property Name="showdate" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_attachments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="mesid" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="hash" Type="char" MaxLength="32" />
+    <Property Name="size" Type="int" />
+    <Property Name="folder" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="filetype" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="filename" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="name" Type="tinytext" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="icon_id" Type="tinyint" Nullable="false" />
+    <Property Name="locked" Type="tinyint" Nullable="false" />
+    <Property Name="accesstype" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="access" Type="int" Nullable="false" />
+    <Property Name="pub_access" Type="int" Nullable="false" />
+    <Property Name="pub_recurse" Type="tinyint" />
+    <Property Name="admin_access" Type="int" Nullable="false" />
+    <Property Name="admin_recurse" Type="tinyint" />
+    <Property Name="ordering" Type="smallint" Nullable="false" />
+    <Property Name="published" Type="tinyint" Nullable="false" />
+    <Property Name="channels" Type="text" />
+    <Property Name="checked_out" Type="tinyint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="review" Type="tinyint" Nullable="false" />
+    <Property Name="allow_anonymous" Type="tinyint" Nullable="false" />
+    <Property Name="post_anonymous" Type="tinyint" Nullable="false" />
+    <Property Name="hits" Type="int" Nullable="false" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="headerdesc" Type="text" Nullable="false" />
+    <Property Name="class_sfx" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="allow_polls" Type="tinyint" Nullable="false" />
+    <Property Name="topic_ordering" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="numTopics" Type="mediumint" Nullable="false" />
+    <Property Name="numPosts" Type="mediumint" Nullable="false" />
+    <Property Name="last_topic_id" Type="int" Nullable="false" />
+    <Property Name="last_post_id" Type="int" Nullable="false" />
+    <Property Name="last_post_time" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_configuration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_keywords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="public_count" Type="int" Nullable="false" />
+    <Property Name="total_count" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_kunena_keywords_map' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_kunena_keywords_map">
+    <Key>
+      <PropertyRef Name="keyword_id" />
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="topic_id" />
+    </Key>
+    <Property Name="keyword_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="topic_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="parent" Type="int" />
+    <Property Name="thread" Type="int" />
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="name" Type="tinytext" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="email" Type="tinytext" />
+    <Property Name="subject" Type="tinytext" />
+    <Property Name="time" Type="int" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="128" />
+    <Property Name="topic_emoticon" Type="int" Nullable="false" />
+    <Property Name="locked" Type="tinyint" Nullable="false" />
+    <Property Name="hold" Type="tinyint" Nullable="false" />
+    <Property Name="ordering" Type="int" />
+    <Property Name="hits" Type="int" />
+    <Property Name="moved" Type="tinyint" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_time" Type="int" />
+    <Property Name="modified_reason" Type="tinytext" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_messages_text">
+    <Key>
+      <PropertyRef Name="mesid" />
+    </Key>
+    <Property Name="mesid" Type="int" Nullable="false" />
+    <Property Name="message" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_polls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="threadid" Type="int" Nullable="false" />
+    <Property Name="polltimetolive" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_polls_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="pollid" Type="int" />
+    <Property Name="text" Type="varchar" MaxLength="100" />
+    <Property Name="votes" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_kunena_polls_users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_kunena_polls_users">
+    <Key>
+      <PropertyRef Name="lasttime" />
+    </Key>
+    <Property Name="pollid" Type="int" />
+    <Property Name="userid" Type="int" />
+    <Property Name="votes" Type="int" />
+    <Property Name="lasttime" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="lastvote" Type="int" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_ranks">
+    <Key>
+      <PropertyRef Name="rank_id" />
+    </Key>
+    <Property Name="rank_id" Type="umediumint" Nullable="false" />
+    <Property Name="rank_title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rank_min" Type="umediumint" Nullable="false" />
+    <Property Name="rank_special" Type="bool" Nullable="false" />
+    <Property Name="rank_image" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_sessions">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="allowed" Type="text" />
+    <Property Name="lasttime" Type="int" Nullable="false" />
+    <Property Name="readtopics" Type="text" />
+    <Property Name="currvisit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_smileys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="greylocation" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="emoticonbar" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_kunena_thankyou' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_kunena_thankyou">
+    <Key>
+      <PropertyRef Name="postid" />
+      <PropertyRef Name="userid" />
+      <PropertyRef Name="targetuserid" />
+      <PropertyRef Name="time" />
+    </Key>
+    <Property Name="postid" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="targetuserid" Type="int" Nullable="false" />
+    <Property Name="time" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_topics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="subject" Type="tinytext" />
+    <Property Name="icon_id" Type="int" Nullable="false" />
+    <Property Name="locked" Type="tinyint" Nullable="false" />
+    <Property Name="hold" Type="tinyint" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="posts" Type="int" Nullable="false" />
+    <Property Name="hits" Type="int" Nullable="false" />
+    <Property Name="attachments" Type="int" Nullable="false" />
+    <Property Name="poll_id" Type="int" Nullable="false" />
+    <Property Name="moved_id" Type="int" Nullable="false" />
+    <Property Name="first_post_id" Type="int" Nullable="false" />
+    <Property Name="first_post_time" Type="int" Nullable="false" />
+    <Property Name="first_post_userid" Type="int" Nullable="false" />
+    <Property Name="first_post_message" Type="text" />
+    <Property Name="first_post_guest_name" Type="tinytext" />
+    <Property Name="last_post_id" Type="int" Nullable="false" />
+    <Property Name="last_post_time" Type="int" Nullable="false" />
+    <Property Name="last_post_userid" Type="int" Nullable="false" />
+    <Property Name="last_post_message" Type="text" />
+    <Property Name="last_post_guest_name" Type="tinytext" />
+    <Property Name="params" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_user_categories">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="role" Type="tinyint" Nullable="false" />
+    <Property Name="allreadtime" Type="datetime" Precision="0" />
+    <Property Name="subscribed" Type="tinyint" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_kunena_user_read' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_kunena_user_read">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="topic_id" />
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="message_id" />
+      <PropertyRef Name="time" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="topic_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="message_id" Type="int" Nullable="false" />
+    <Property Name="time" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_kunena_user_topics' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_kunena_user_topics">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="topic_id" />
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="posts" />
+      <PropertyRef Name="last_post_id" />
+      <PropertyRef Name="owner" />
+      <PropertyRef Name="favorite" />
+      <PropertyRef Name="subscribed" />
+      <PropertyRef Name="params" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="topic_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="posts" Type="mediumint" Nullable="false" />
+    <Property Name="last_post_id" Type="int" Nullable="false" />
+    <Property Name="owner" Type="tinyint" Nullable="false" />
+    <Property Name="favorite" Type="tinyint" Nullable="false" />
+    <Property Name="subscribed" Type="tinyint" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_users">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="view" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="signature" Type="text" />
+    <Property Name="moderator" Type="int" />
+    <Property Name="banned" Type="datetime" Precision="0" />
+    <Property Name="ordering" Type="int" />
+    <Property Name="posts" Type="int" />
+    <Property Name="avatar" Type="varchar" MaxLength="255" />
+    <Property Name="karma" Type="int" />
+    <Property Name="karma_time" Type="int" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="uhits" Type="int" />
+    <Property Name="personalText" Type="tinytext" />
+    <Property Name="gender" Type="tinyint" Nullable="false" />
+    <Property Name="birthdate" Type="date" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="50" />
+    <Property Name="icq" Type="varchar" MaxLength="50" />
+    <Property Name="aim" Type="varchar" MaxLength="50" />
+    <Property Name="yim" Type="varchar" MaxLength="50" />
+    <Property Name="msn" Type="varchar" MaxLength="50" />
+    <Property Name="skype" Type="varchar" MaxLength="50" />
+    <Property Name="twitter" Type="varchar" MaxLength="50" />
+    <Property Name="facebook" Type="varchar" MaxLength="50" />
+    <Property Name="gtalk" Type="varchar" MaxLength="50" />
+    <Property Name="myspace" Type="varchar" MaxLength="50" />
+    <Property Name="linkedin" Type="varchar" MaxLength="50" />
+    <Property Name="delicious" Type="varchar" MaxLength="50" />
+    <Property Name="friendfeed" Type="varchar" MaxLength="50" />
+    <Property Name="digg" Type="varchar" MaxLength="50" />
+    <Property Name="blogspot" Type="varchar" MaxLength="50" />
+    <Property Name="flickr" Type="varchar" MaxLength="50" />
+    <Property Name="bebo" Type="varchar" MaxLength="50" />
+    <Property Name="websitename" Type="varchar" MaxLength="50" />
+    <Property Name="websiteurl" Type="varchar" MaxLength="50" />
+    <Property Name="rank" Type="tinyint" Nullable="false" />
+    <Property Name="hideEmail" Type="bool" Nullable="false" />
+    <Property Name="showOnline" Type="bool" Nullable="false" />
+    <Property Name="thankyou" Type="int" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_users_banned">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" />
+    <Property Name="ip" Type="varchar" MaxLength="128" />
+    <Property Name="blocked" Type="tinyint" Nullable="false" />
+    <Property Name="expiration" Type="datetime" Precision="0" />
+    <Property Name="created_by" Type="int" Nullable="false" />
+    <Property Name="created_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="reason_private" Type="text" />
+    <Property Name="reason_public" Type="text" />
+    <Property Name="modified_by" Type="int" />
+    <Property Name="modified_time" Type="datetime" Precision="0" />
+    <Property Name="comments" Type="text" />
+    <Property Name="params" Type="text" />
+  </EntityType>
+  <EntityType Name="ampu_kunena_version">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="version" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="versiondate" Type="date" Nullable="false" />
+    <Property Name="installdate" Type="date" Nullable="false" />
+    <Property Name="build" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="versionname" Type="varchar" MaxLength="40" />
+    <Property Name="state" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_languages">
+    <Key>
+      <PropertyRef Name="lang_id" />
+    </Key>
+    <Property Name="lang_id" Type="uint" Nullable="false" />
+    <Property Name="lang_code" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="title_native" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sef" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="metakey" Type="text" Nullable="false" />
+    <Property Name="metadesc" Type="text" Nullable="false" />
+    <Property Name="sitename" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="published" Type="int" Nullable="false" />
+    <Property Name="access" Type="uint" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="menutype" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="note" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="path" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="link" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="published" Type="tinyint" Nullable="false" />
+    <Property Name="parent_id" Type="uint" Nullable="false" />
+    <Property Name="level" Type="uint" Nullable="false" />
+    <Property Name="component_id" Type="uint" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="browserNav" Type="tinyint" Nullable="false" />
+    <Property Name="access" Type="uint" Nullable="false" />
+    <Property Name="img" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="template_style_id" Type="uint" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="lft" Type="int" Nullable="false" />
+    <Property Name="rgt" Type="int" Nullable="false" />
+    <Property Name="home" Type="utinyint" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="client_id" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_menu_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="menutype" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="48" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_messages">
+    <Key>
+      <PropertyRef Name="message_id" />
+    </Key>
+    <Property Name="message_id" Type="uint" Nullable="false" />
+    <Property Name="user_id_from" Type="uint" Nullable="false" />
+    <Property Name="user_id_to" Type="uint" Nullable="false" />
+    <Property Name="folder_id" Type="utinyint" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="state" Type="bool" Nullable="false" />
+    <Property Name="priority" Type="bool" Nullable="false" />
+    <Property Name="subject" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="message" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_messages_cfg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_messages_cfg">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="cfg_name" />
+      <PropertyRef Name="cfg_value" />
+    </Key>
+    <Property Name="user_id" Type="uint" Nullable="false" />
+    <Property Name="cfg_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="cfg_value" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_modules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="note" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="position" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_up" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_down" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="module" Type="varchar" MaxLength="50" />
+    <Property Name="access" Type="uint" Nullable="false" />
+    <Property Name="showtitle" Type="utinyint" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="client_id" Type="tinyint" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_modules_menu">
+    <Key>
+      <PropertyRef Name="moduleid" />
+      <PropertyRef Name="menuid" />
+    </Key>
+    <Property Name="moduleid" Type="int" Nullable="false" />
+    <Property Name="menuid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_newsfeeds">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="link" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="filename" Type="varchar" MaxLength="200" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="numarticles" Type="uint" Nullable="false" />
+    <Property Name="cache_time" Type="uint" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="rtl" Type="tinyint" Nullable="false" />
+    <Property Name="access" Type="uint" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="created_by" Type="uint" Nullable="false" />
+    <Property Name="created_by_alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="modified" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="modified_by" Type="uint" Nullable="false" />
+    <Property Name="metakey" Type="text" Nullable="false" />
+    <Property Name="metadesc" Type="text" Nullable="false" />
+    <Property Name="metadata" Type="text" Nullable="false" />
+    <Property Name="xreference" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="publish_up" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_down" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_overrider">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="constant" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="string" Type="text" Nullable="false" />
+    <Property Name="file" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="sid" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="filename" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="hits" Type="int" Nullable="false" />
+    <Property Name="latitude" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="longitude" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="zoom" Type="int" Nullable="false" />
+    <Property Name="geotitle" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="videocode" Type="text" />
+    <Property Name="vmproductid" Type="int" Nullable="false" />
+    <Property Name="imgorigsize" Type="int" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="approved" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="int" Nullable="false" />
+    <Property Name="checked_out_time" Type="date" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" />
+    <Property Name="metakey" Type="text" />
+    <Property Name="metadesc" Type="text" />
+    <Property Name="metadata" Type="text" />
+    <Property Name="extlink1" Type="text" />
+    <Property Name="extlink2" Type="text" />
+    <Property Name="extid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="exttype" Type="bool" Nullable="false" />
+    <Property Name="extl" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="extm" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="exts" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="exto" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="extw" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="exth" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="owner_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="section" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="image_position" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="approved" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="editor" Type="varchar" MaxLength="50" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="access" Type="utinyint" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="hits" Type="int" Nullable="false" />
+    <Property Name="accessuserid" Type="text" />
+    <Property Name="uploaduserid" Type="text" />
+    <Property Name="deleteuserid" Type="text" />
+    <Property Name="userfolder" Type="text" />
+    <Property Name="latitude" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="longitude" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="zoom" Type="int" Nullable="false" />
+    <Property Name="geotitle" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="extid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="exta" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="extu" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="extauth" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="extfbuid" Type="int" Nullable="false" />
+    <Property Name="extfbcatid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="params" Type="text" />
+    <Property Name="metakey" Type="text" />
+    <Property Name="metadesc" Type="text" />
+    <Property Name="metadata" Type="text" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="comment" Type="text" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_fb_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="appid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="appsid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="uid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="link" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="secret" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="base_domain" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="expires" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="session_key" Type="text" />
+    <Property Name="access_token" Type="text" />
+    <Property Name="sig" Type="text" />
+    <Property Name="fanpageid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="comments" Type="text" />
+    <Property Name="params" Type="text" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_img_comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="imgid" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="comment" Type="text" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_img_votes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="imgid" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="rating" Type="bool" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_img_votes_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="imgid" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="average" Type="float" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="link_cat" Type="int" Nullable="false" />
+    <Property Name="link_ext" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_tags_ref">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" Nullable="false" />
+    <Property Name="imgid" Type="int" Nullable="false" />
+    <Property Name="tagid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="avatar" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="approved" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="int" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_votes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="rating" Type="bool" Nullable="false" />
+    <Property Name="published" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_phocagallery_votes_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="average" Type="float" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_redirect_links">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="old_url" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="new_url" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="referer" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="published" Type="tinyint" Nullable="false" />
+    <Property Name="created_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="modified_date" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_schemas">
+    <Key>
+      <PropertyRef Name="extension_id" />
+      <PropertyRef Name="version_id" />
+    </Key>
+    <Property Name="extension_id" Type="int" Nullable="false" />
+    <Property Name="version_id" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_session">
+    <Key>
+      <PropertyRef Name="session_id" />
+    </Key>
+    <Property Name="session_id" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="client_id" Type="utinyint" Nullable="false" />
+    <Property Name="guest" Type="utinyint" />
+    <Property Name="time" Type="varchar" MaxLength="14" />
+    <Property Name="data" Type="mediumtext" />
+    <Property Name="userid" Type="int" />
+    <Property Name="username" Type="varchar" MaxLength="150" />
+    <Property Name="usertype" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ampu_template_styles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="template" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="client_id" Type="bool" Nullable="false" />
+    <Property Name="home" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_update_categories">
+    <Key>
+      <PropertyRef Name="categoryid" />
+    </Key>
+    <Property Name="categoryid" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="parent" Type="int" />
+    <Property Name="updatesite" Type="int" />
+  </EntityType>
+  <EntityType Name="ampu_update_sites">
+    <Key>
+      <PropertyRef Name="update_site_id" />
+    </Key>
+    <Property Name="update_site_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="type" Type="varchar" MaxLength="20" />
+    <Property Name="location" Type="text" Nullable="false" />
+    <Property Name="enabled" Type="int" />
+    <Property Name="last_check_timestamp" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ampu_update_sites_extensions">
+    <Key>
+      <PropertyRef Name="update_site_id" />
+      <PropertyRef Name="extension_id" />
+    </Key>
+    <Property Name="update_site_id" Type="int" Nullable="false" />
+    <Property Name="extension_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_updates">
+    <Key>
+      <PropertyRef Name="update_id" />
+    </Key>
+    <Property Name="update_id" Type="int" Nullable="false" />
+    <Property Name="update_site_id" Type="int" />
+    <Property Name="extension_id" Type="int" />
+    <Property Name="categoryid" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="element" Type="varchar" MaxLength="100" />
+    <Property Name="type" Type="varchar" MaxLength="20" />
+    <Property Name="folder" Type="varchar" MaxLength="20" />
+    <Property Name="client_id" Type="tinyint" />
+    <Property Name="version" Type="varchar" MaxLength="10" />
+    <Property Name="data" Type="text" Nullable="false" />
+    <Property Name="detailsurl" Type="text" Nullable="false" />
+    <Property Name="infourl" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_user_notes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="user_id" Type="uint" Nullable="false" />
+    <Property Name="catid" Type="uint" Nullable="false" />
+    <Property Name="subject" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="body" Type="text" Nullable="false" />
+    <Property Name="state" Type="tinyint" Nullable="false" />
+    <Property Name="checked_out" Type="uint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="created_user_id" Type="uint" Nullable="false" />
+    <Property Name="created_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="modified_user_id" Type="uint" Nullable="false" />
+    <Property Name="modified_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="review_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_up" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_down" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.ampu_user_profiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ampu_user_profiles">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="profile_key" />
+      <PropertyRef Name="profile_value" />
+      <PropertyRef Name="ordering" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="profile_key" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="profile_value" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_user_usergroup_map">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="user_id" Type="uint" Nullable="false" />
+    <Property Name="group_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_usergroups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="parent_id" Type="uint" Nullable="false" />
+    <Property Name="lft" Type="int" Nullable="false" />
+    <Property Name="rgt" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="usertype" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="block" Type="tinyint" Nullable="false" />
+    <Property Name="sendEmail" Type="tinyint" />
+    <Property Name="registerDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="lastvisitDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="activation" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="port" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ampu_viewlevels">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="rules" Type="varchar" MaxLength="5120" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_weblinks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" Nullable="false" />
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="sid" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="hits" Type="int" Nullable="false" />
+    <Property Name="state" Type="bool" Nullable="false" />
+    <Property Name="checked_out" Type="int" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="archived" Type="bool" Nullable="false" />
+    <Property Name="approved" Type="bool" Nullable="false" />
+    <Property Name="access" Type="int" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+    <Property Name="language" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="created_by" Type="uint" Nullable="false" />
+    <Property Name="created_by_alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="modified" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="modified_by" Type="uint" Nullable="false" />
+    <Property Name="metakey" Type="text" Nullable="false" />
+    <Property Name="metadesc" Type="text" Nullable="false" />
+    <Property Name="metadata" Type="text" Nullable="false" />
+    <Property Name="featured" Type="utinyint" Nullable="false" />
+    <Property Name="xreference" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="publish_up" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="publish_down" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_wf_profiles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="users" Type="text" Nullable="false" />
+    <Property Name="types" Type="text" />
+    <Property Name="components" Type="text" Nullable="false" />
+    <Property Name="area" Type="tinyint" Nullable="false" />
+    <Property Name="device" Type="varchar" MaxLength="255" />
+    <Property Name="rows" Type="text" Nullable="false" />
+    <Property Name="plugins" Type="text" Nullable="false" />
+    <Property Name="published" Type="tinyint" Nullable="false" />
+    <Property Name="ordering" Type="int" Nullable="false" />
+    <Property Name="checked_out" Type="tinyint" Nullable="false" />
+    <Property Name="checked_out_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="params" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ampu_xmap_items">
+    <Key>
+      <PropertyRef Name="uid" />
+      <PropertyRef Name="itemid" />
+      <PropertyRef Name="view" />
+      <PropertyRef Name="sitemap_id" />
+    </Key>
+    <Property Name="uid" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="itemid" Type="int" Nullable="false" />
+    <Property Name="view" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="sitemap_id" Type="int" Nullable="false" />
+    <Property Name="properties" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="ampu_xmap_sitemap">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" />
+    <Property Name="alias" Type="varchar" MaxLength="255" />
+    <Property Name="introtext" Type="text" />
+    <Property Name="metadesc" Type="text" />
+    <Property Name="metakey" Type="text" />
+    <Property Name="attribs" Type="text" />
+    <Property Name="selections" Type="text" />
+    <Property Name="excluded_items" Type="text" />
+    <Property Name="is_default" Type="int" />
+    <Property Name="state" Type="int" />
+    <Property Name="access" Type="int" />
+    <Property Name="created" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="count_xml" Type="int" />
+    <Property Name="count_html" Type="int" />
+    <Property Name="views_xml" Type="int" />
+    <Property Name="views_html" Type="int" />
+    <Property Name="lastvisit_xml" Type="int" />
+    <Property Name="lastvisit_html" Type="int" />
+  </EntityType>
+  <EntityType Name="blank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="name_ua" Type="varchar" MaxLength="255" />
+    <Property Name="name_en" Type="varchar" MaxLength="255" />
+    <Property Name="value" Type="int" />
+    <Property Name="updated_at" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="value" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="config_key" Type="text" />
+    <Property Name="config_value" Type="text" />
+    <Property Name="group_name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_dev_direction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="smallint" Nullable="false" />
+    <Property Name="name_ru" Type="varchar" MaxLength="255" />
+    <Property Name="name_ua" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name_en" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="pro_direction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="smallint" Nullable="false" />
+    <Property Name="name_ru" Type="varchar" MaxLength="255" />
+    <Property Name="name_ua" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name_en" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="pro_port">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="smallint" Nullable="false" />
+    <Property Name="name_ru" Type="varchar" MaxLength="255" />
+    <Property Name="name_ua" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name_en" Type="varchar" MaxLength="255" />
+    <Property Name="plan_href" Type="text" />
+  </EntityType>
+  <EntityType Name="pro_project">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="port_id" Type="smallint" Nullable="false" />
+    <Property Name="direction_id" Type="smallint" Nullable="false" />
+    <Property Name="dev_direction_id" Type="smallint" Nullable="false" />
+    <Property Name="name_ru" Type="varchar" MaxLength="255" />
+    <Property Name="name_ua" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name_en" Type="varchar" MaxLength="255" />
+    <Property Name="investor_ru" Type="varchar" MaxLength="255" />
+    <Property Name="investor_ua" Type="varchar" MaxLength="255" />
+    <Property Name="investor_en" Type="varchar" MaxLength="255" />
+    <Property Name="expected_result_ru" Type="varchar" MaxLength="255" />
+    <Property Name="expected_result_ua" Type="varchar" MaxLength="255" />
+    <Property Name="expected_result_en" Type="varchar" MaxLength="255" />
+    <Property Name="dev_project_ru" Type="varchar" MaxLength="100" />
+    <Property Name="dev_project_ua" Type="varchar" MaxLength="100" />
+    <Property Name="dev_project_en" Type="varchar" MaxLength="100" />
+    <Property Name="dev_title_ru" Type="varchar" MaxLength="100" />
+    <Property Name="dev_title_ua" Type="varchar" MaxLength="100" />
+    <Property Name="dev_title_en" Type="varchar" MaxLength="100" />
+    <Property Name="tender_ru" Type="varchar" MaxLength="100" />
+    <Property Name="tender_ua" Type="varchar" MaxLength="100" />
+    <Property Name="tender_en" Type="varchar" MaxLength="100" />
+    <Property Name="contract_date_ru" Type="varchar" MaxLength="100" />
+    <Property Name="contract_date_ua" Type="varchar" MaxLength="100" />
+    <Property Name="contract_date_en" Type="varchar" MaxLength="100" />
+    <Property Name="fact_percent" Type="smallint" />
+    <Property Name="date_end_ru" Type="varchar" MaxLength="100" />
+    <Property Name="date_end_ua" Type="varchar" MaxLength="100" />
+    <Property Name="date_end_en" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="pro_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.uspa.pro_roles_users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="pro_roles_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_user_tokens">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="user_agent" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="token" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="created" Type="uint" Nullable="false" />
+    <Property Name="expires" Type="uint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pro_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="logins" Type="int" Nullable="false" />
+    <Property Name="last_login" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_admin_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="time" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="action" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_admin_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="lan" Type="int" Nullable="false" />
+    <Property Name="lan_id_for_menu" Type="int" Nullable="false" />
+    <Property Name="belong" Type="int" Nullable="false" />
+    <Property Name="p" Type="int" Nullable="false" />
+    <Property Name="text" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="lan" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="belong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bottom_logo" Type="int" Nullable="false" />
+    <Property Name="top_img" Type="int" Nullable="false" />
+    <Property Name="logo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="active" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="lan" Type="int" Nullable="false" />
+    <Property Name="cat_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="text" Type="longtext" Nullable="false" />
+    <Property Name="date" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_files">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="content_id" Type="int" Nullable="false" />
+    <Property Name="file" Type="longblob" Nullable="false" />
+    <Property Name="filename" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="discription" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="craeted_date" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="content_id" Type="int" Nullable="false" />
+    <Property Name="item" Type="mediumblob" Nullable="false" />
+    <Property Name="content" Type="mediumblob" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="lan" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="t_logo" Type="int" Nullable="false" />
+    <Property Name="todey" Type="text" Nullable="false" />
+    <Property Name="characteristics" Type="longtext" Nullable="false" />
+    <Property Name="location" Type="text" Nullable="false" />
+    <Property Name="corridor" Type="int" Nullable="false" />
+    <Property Name="bot_info" Type="text" Nullable="false" />
+    <Property Name="adres" Type="text" Nullable="false" />
+    <Property Name="contacts" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_lan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="lan" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="text" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="active" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="menu_num" Type="int" Nullable="false" />
+    <Property Name="lan" Type="int" Nullable="false" />
+    <Property Name="belong" Type="int" Nullable="false" />
+    <Property Name="p" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="content_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="sort_by" Type="int" Nullable="false" />
+    <Property Name="blog_style" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_url_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="content_id" Type="int" Nullable="false" />
+    <Property Name="active" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_url_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="menu_id" Type="int" Nullable="false" />
+    <Property Name="active" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="active" Type="int" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="uspaOldModelStoreContainer">
+    <EntitySet Name="ampu_acymailing_config" EntityType="Self.ampu_acymailing_config" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_fields" EntityType="Self.ampu_acymailing_fields" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_filter" EntityType="Self.ampu_acymailing_filter" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_list" EntityType="Self.ampu_acymailing_list" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_listcampaign" EntityType="Self.ampu_acymailing_listcampaign" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_listmail" EntityType="Self.ampu_acymailing_listmail" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_listsub" EntityType="Self.ampu_acymailing_listsub" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_mail" EntityType="Self.ampu_acymailing_mail" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_queue" EntityType="Self.ampu_acymailing_queue" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_rules" EntityType="Self.ampu_acymailing_rules" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_stats" EntityType="Self.ampu_acymailing_stats" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_subscriber" EntityType="Self.ampu_acymailing_subscriber" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_subscriber_copy" EntityType="Self.ampu_acymailing_subscriber_copy" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_template" EntityType="Self.ampu_acymailing_template" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_url" EntityType="Self.ampu_acymailing_url" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_urlclick" EntityType="Self.ampu_acymailing_urlclick" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_userstats" EntityType="Self.ampu_acymailing_userstats" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_assets" EntityType="Self.ampu_assets" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_associations" EntityType="Self.ampu_associations" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_banner_clients" EntityType="Self.ampu_banner_clients" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_banner_tracks" EntityType="Self.ampu_banner_tracks" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_banners" EntityType="Self.ampu_banners" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_categories" EntityType="Self.ampu_categories" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_contact_details" EntityType="Self.ampu_contact_details" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_content" EntityType="Self.ampu_content" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_content_frontpage" EntityType="Self.ampu_content_frontpage" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_content_rating" EntityType="Self.ampu_content_rating" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_easybook" EntityType="Self.ampu_easybook" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_easybook_badwords" EntityType="Self.ampu_easybook_badwords" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_extensions" EntityType="Self.ampu_extensions" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_filters" EntityType="Self.ampu_finder_filters" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links" EntityType="Self.ampu_finder_links" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms0" EntityType="Self.ampu_finder_links_terms0" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms1" EntityType="Self.ampu_finder_links_terms1" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms2" EntityType="Self.ampu_finder_links_terms2" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms3" EntityType="Self.ampu_finder_links_terms3" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms4" EntityType="Self.ampu_finder_links_terms4" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms5" EntityType="Self.ampu_finder_links_terms5" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms6" EntityType="Self.ampu_finder_links_terms6" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms7" EntityType="Self.ampu_finder_links_terms7" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms8" EntityType="Self.ampu_finder_links_terms8" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_terms9" EntityType="Self.ampu_finder_links_terms9" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_termsa" EntityType="Self.ampu_finder_links_termsa" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_termsb" EntityType="Self.ampu_finder_links_termsb" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_termsc" EntityType="Self.ampu_finder_links_termsc" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_termsd" EntityType="Self.ampu_finder_links_termsd" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_termse" EntityType="Self.ampu_finder_links_termse" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_links_termsf" EntityType="Self.ampu_finder_links_termsf" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_taxonomy" EntityType="Self.ampu_finder_taxonomy" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_taxonomy_map" EntityType="Self.ampu_finder_taxonomy_map" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_terms" EntityType="Self.ampu_finder_terms" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_finder_types" EntityType="Self.ampu_finder_types" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments" EntityType="Self.ampu_jcomments" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments_blacklist" EntityType="Self.ampu_jcomments_blacklist" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments_custom_bbcodes" EntityType="Self.ampu_jcomments_custom_bbcodes" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments_objects" EntityType="Self.ampu_jcomments_objects" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments_reports" EntityType="Self.ampu_jcomments_reports" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments_settings" EntityType="Self.ampu_jcomments_settings" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments_subscriptions" EntityType="Self.ampu_jcomments_subscriptions" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments_version" EntityType="Self.ampu_jcomments_version" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_jcomments_votes" EntityType="Self.ampu_jcomments_votes" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_announcement" EntityType="Self.ampu_kunena_announcement" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_attachments" EntityType="Self.ampu_kunena_attachments" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_categories" EntityType="Self.ampu_kunena_categories" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_configuration" EntityType="Self.ampu_kunena_configuration" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_keywords" EntityType="Self.ampu_kunena_keywords" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_messages" EntityType="Self.ampu_kunena_messages" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_messages_text" EntityType="Self.ampu_kunena_messages_text" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_polls" EntityType="Self.ampu_kunena_polls" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_polls_options" EntityType="Self.ampu_kunena_polls_options" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_ranks" EntityType="Self.ampu_kunena_ranks" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_sessions" EntityType="Self.ampu_kunena_sessions" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_smileys" EntityType="Self.ampu_kunena_smileys" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_topics" EntityType="Self.ampu_kunena_topics" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_user_categories" EntityType="Self.ampu_kunena_user_categories" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_users" EntityType="Self.ampu_kunena_users" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_users_banned" EntityType="Self.ampu_kunena_users_banned" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_kunena_version" EntityType="Self.ampu_kunena_version" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_languages" EntityType="Self.ampu_languages" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_menu" EntityType="Self.ampu_menu" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_menu_types" EntityType="Self.ampu_menu_types" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_messages" EntityType="Self.ampu_messages" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_modules" EntityType="Self.ampu_modules" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_modules_menu" EntityType="Self.ampu_modules_menu" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_newsfeeds" EntityType="Self.ampu_newsfeeds" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_overrider" EntityType="Self.ampu_overrider" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery" EntityType="Self.ampu_phocagallery" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_categories" EntityType="Self.ampu_phocagallery_categories" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_comments" EntityType="Self.ampu_phocagallery_comments" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_fb_users" EntityType="Self.ampu_phocagallery_fb_users" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_img_comments" EntityType="Self.ampu_phocagallery_img_comments" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_img_votes" EntityType="Self.ampu_phocagallery_img_votes" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_img_votes_statistics" EntityType="Self.ampu_phocagallery_img_votes_statistics" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_tags" EntityType="Self.ampu_phocagallery_tags" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_tags_ref" EntityType="Self.ampu_phocagallery_tags_ref" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_user" EntityType="Self.ampu_phocagallery_user" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_votes" EntityType="Self.ampu_phocagallery_votes" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_phocagallery_votes_statistics" EntityType="Self.ampu_phocagallery_votes_statistics" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_redirect_links" EntityType="Self.ampu_redirect_links" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_schemas" EntityType="Self.ampu_schemas" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_session" EntityType="Self.ampu_session" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_template_styles" EntityType="Self.ampu_template_styles" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_update_categories" EntityType="Self.ampu_update_categories" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_update_sites" EntityType="Self.ampu_update_sites" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_update_sites_extensions" EntityType="Self.ampu_update_sites_extensions" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_updates" EntityType="Self.ampu_updates" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_user_notes" EntityType="Self.ampu_user_notes" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_user_usergroup_map" EntityType="Self.ampu_user_usergroup_map" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_usergroups" EntityType="Self.ampu_usergroups" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_users" EntityType="Self.ampu_users" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_viewlevels" EntityType="Self.ampu_viewlevels" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_weblinks" EntityType="Self.ampu_weblinks" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_wf_profiles" EntityType="Self.ampu_wf_profiles" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_xmap_items" EntityType="Self.ampu_xmap_items" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_xmap_sitemap" EntityType="Self.ampu_xmap_sitemap" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="blank" EntityType="Self.blank" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="history" EntityType="Self.history" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="pro_config" EntityType="Self.pro_config" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="pro_dev_direction" EntityType="Self.pro_dev_direction" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="pro_direction" EntityType="Self.pro_direction" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="pro_port" EntityType="Self.pro_port" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="pro_project" EntityType="Self.pro_project" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="pro_roles" EntityType="Self.pro_roles" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="pro_user_tokens" EntityType="Self.pro_user_tokens" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="pro_users" EntityType="Self.pro_users" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_admin_log" EntityType="Self.site_admin_log" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_admin_menu" EntityType="Self.site_admin_menu" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_category" EntityType="Self.site_category" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_config" EntityType="Self.site_config" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_content" EntityType="Self.site_content" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_files" EntityType="Self.site_files" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_images" EntityType="Self.site_images" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_info" EntityType="Self.site_info" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_lan" EntityType="Self.site_lan" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_menu" EntityType="Self.site_menu" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_url_content" EntityType="Self.site_url_content" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_url_menu" EntityType="Self.site_url_menu" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="site_users" EntityType="Self.site_users" Schema="uspa" store:Type="Tables" />
+    <EntitySet Name="ampu_acymailing_history" EntityType="Self.ampu_acymailing_history" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_acymailing_history`.`subid`, 
+`ampu_acymailing_history`.`date`, 
+`ampu_acymailing_history`.`ip`, 
+`ampu_acymailing_history`.`action`, 
+`ampu_acymailing_history`.`data`, 
+`ampu_acymailing_history`.`source`, 
+`ampu_acymailing_history`.`mailid`
+FROM `ampu_acymailing_history` AS `ampu_acymailing_history`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_core_log_searches" EntityType="Self.ampu_core_log_searches" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_core_log_searches`.`search_term`, 
+`ampu_core_log_searches`.`hits`
+FROM `ampu_core_log_searches` AS `ampu_core_log_searches`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_finder_terms_common" EntityType="Self.ampu_finder_terms_common" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_finder_terms_common`.`term`, 
+`ampu_finder_terms_common`.`language`
+FROM `ampu_finder_terms_common` AS `ampu_finder_terms_common`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_finder_tokens" EntityType="Self.ampu_finder_tokens" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_finder_tokens`.`term`, 
+`ampu_finder_tokens`.`stem`, 
+`ampu_finder_tokens`.`common`, 
+`ampu_finder_tokens`.`phrase`, 
+`ampu_finder_tokens`.`context`
+FROM `ampu_finder_tokens` AS `ampu_finder_tokens`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_finder_tokens_aggregate" EntityType="Self.ampu_finder_tokens_aggregate" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_finder_tokens_aggregate`.`term_id`, 
+`ampu_finder_tokens_aggregate`.`map_suffix`, 
+`ampu_finder_tokens_aggregate`.`term`, 
+`ampu_finder_tokens_aggregate`.`stem`, 
+`ampu_finder_tokens_aggregate`.`common`, 
+`ampu_finder_tokens_aggregate`.`phrase`, 
+`ampu_finder_tokens_aggregate`.`context`
+FROM `ampu_finder_tokens_aggregate` AS `ampu_finder_tokens_aggregate`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_ga_dash" EntityType="Self.ampu_ga_dash" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_ga_dash`.`id`, 
+`ampu_ga_dash`.`token`
+FROM `ampu_ga_dash` AS `ampu_ga_dash`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_ga_dash_cache" EntityType="Self.ampu_ga_dash_cache" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_ga_dash_cache`.`name`, 
+`ampu_ga_dash_cache`.`data`, 
+`ampu_ga_dash_cache`.`expire`
+FROM `ampu_ga_dash_cache` AS `ampu_ga_dash_cache`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_kunena_aliases" EntityType="Self.ampu_kunena_aliases" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_kunena_aliases`.`alias`, 
+`ampu_kunena_aliases`.`type`, 
+`ampu_kunena_aliases`.`item`, 
+`ampu_kunena_aliases`.`state`
+FROM `ampu_kunena_aliases` AS `ampu_kunena_aliases`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_kunena_keywords_map" EntityType="Self.ampu_kunena_keywords_map" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_kunena_keywords_map`.`keyword_id`, 
+`ampu_kunena_keywords_map`.`user_id`, 
+`ampu_kunena_keywords_map`.`topic_id`
+FROM `ampu_kunena_keywords_map` AS `ampu_kunena_keywords_map`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_kunena_polls_users" EntityType="Self.ampu_kunena_polls_users" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_kunena_polls_users`.`pollid`, 
+`ampu_kunena_polls_users`.`userid`, 
+`ampu_kunena_polls_users`.`votes`, 
+`ampu_kunena_polls_users`.`lasttime`, 
+`ampu_kunena_polls_users`.`lastvote`
+FROM `ampu_kunena_polls_users` AS `ampu_kunena_polls_users`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_kunena_thankyou" EntityType="Self.ampu_kunena_thankyou" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_kunena_thankyou`.`postid`, 
+`ampu_kunena_thankyou`.`userid`, 
+`ampu_kunena_thankyou`.`targetuserid`, 
+`ampu_kunena_thankyou`.`time`
+FROM `ampu_kunena_thankyou` AS `ampu_kunena_thankyou`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_kunena_user_read" EntityType="Self.ampu_kunena_user_read" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_kunena_user_read`.`user_id`, 
+`ampu_kunena_user_read`.`topic_id`, 
+`ampu_kunena_user_read`.`category_id`, 
+`ampu_kunena_user_read`.`message_id`, 
+`ampu_kunena_user_read`.`time`
+FROM `ampu_kunena_user_read` AS `ampu_kunena_user_read`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_kunena_user_topics" EntityType="Self.ampu_kunena_user_topics" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_kunena_user_topics`.`user_id`, 
+`ampu_kunena_user_topics`.`topic_id`, 
+`ampu_kunena_user_topics`.`category_id`, 
+`ampu_kunena_user_topics`.`posts`, 
+`ampu_kunena_user_topics`.`last_post_id`, 
+`ampu_kunena_user_topics`.`owner`, 
+`ampu_kunena_user_topics`.`favorite`, 
+`ampu_kunena_user_topics`.`subscribed`, 
+`ampu_kunena_user_topics`.`params`
+FROM `ampu_kunena_user_topics` AS `ampu_kunena_user_topics`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_messages_cfg" EntityType="Self.ampu_messages_cfg" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_messages_cfg`.`user_id`, 
+`ampu_messages_cfg`.`cfg_name`, 
+`ampu_messages_cfg`.`cfg_value`
+FROM `ampu_messages_cfg` AS `ampu_messages_cfg`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ampu_user_profiles" EntityType="Self.ampu_user_profiles" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`ampu_user_profiles`.`user_id`, 
+`ampu_user_profiles`.`profile_key`, 
+`ampu_user_profiles`.`profile_value`, 
+`ampu_user_profiles`.`ordering`
+FROM `ampu_user_profiles` AS `ampu_user_profiles`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="pro_roles_users" EntityType="Self.pro_roles_users" store:Type="Tables" store:Schema="uspa">
+      <DefiningQuery>SELECT
+`pro_roles_users`.`user_id`, 
+`pro_roles_users`.`role_id`
+FROM `pro_roles_users` AS `pro_roles_users`</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

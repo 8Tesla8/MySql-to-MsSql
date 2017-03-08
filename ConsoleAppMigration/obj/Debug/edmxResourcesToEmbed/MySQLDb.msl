@@ -1,0 +1,2356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="uspaModelStoreContainer" CdmEntityContainer="uspaEntities">
+    <EntitySetMapping Name="ampu_acymailing_config">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_config">
+        <MappingFragment StoreEntitySet="ampu_acymailing_config">
+          <ScalarProperty Name="namekey" ColumnName="namekey" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_fields">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_fields">
+        <MappingFragment StoreEntitySet="ampu_acymailing_fields">
+          <ScalarProperty Name="fieldid" ColumnName="fieldid" />
+          <ScalarProperty Name="fieldname" ColumnName="fieldname" />
+          <ScalarProperty Name="namekey" ColumnName="namekey" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="options" ColumnName="options" />
+          <ScalarProperty Name="core" ColumnName="core" />
+          <ScalarProperty Name="required" ColumnName="required" />
+          <ScalarProperty Name="backend" ColumnName="backend" />
+          <ScalarProperty Name="frontcomp" ColumnName="frontcomp" />
+          <ScalarProperty Name="default" ColumnName="default" />
+          <ScalarProperty Name="listing" ColumnName="listing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_filter">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_filter">
+        <MappingFragment StoreEntitySet="ampu_acymailing_filter">
+          <ScalarProperty Name="filid" ColumnName="filid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="lasttime" ColumnName="lasttime" />
+          <ScalarProperty Name="trigger" ColumnName="trigger" />
+          <ScalarProperty Name="report" ColumnName="report" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="filter" ColumnName="filter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_list">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_list">
+        <MappingFragment StoreEntitySet="ampu_acymailing_list">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="listid" ColumnName="listid" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="welmailid" ColumnName="welmailid" />
+          <ScalarProperty Name="unsubmailid" ColumnName="unsubmailid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="access_sub" ColumnName="access_sub" />
+          <ScalarProperty Name="access_manage" ColumnName="access_manage" />
+          <ScalarProperty Name="languages" ColumnName="languages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_listcampaign">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_listcampaign">
+        <MappingFragment StoreEntitySet="ampu_acymailing_listcampaign">
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="listid" ColumnName="listid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_listmail">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_listmail">
+        <MappingFragment StoreEntitySet="ampu_acymailing_listmail">
+          <ScalarProperty Name="listid" ColumnName="listid" />
+          <ScalarProperty Name="mailid" ColumnName="mailid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_listsub">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_listsub">
+        <MappingFragment StoreEntitySet="ampu_acymailing_listsub">
+          <ScalarProperty Name="listid" ColumnName="listid" />
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="subdate" ColumnName="subdate" />
+          <ScalarProperty Name="unsubdate" ColumnName="unsubdate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_mail">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_mail">
+        <MappingFragment StoreEntitySet="ampu_acymailing_mail">
+          <ScalarProperty Name="mailid" ColumnName="mailid" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="altbody" ColumnName="altbody" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="senddate" ColumnName="senddate" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="fromname" ColumnName="fromname" />
+          <ScalarProperty Name="fromemail" ColumnName="fromemail" />
+          <ScalarProperty Name="replyname" ColumnName="replyname" />
+          <ScalarProperty Name="replyemail" ColumnName="replyemail" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="attach" ColumnName="attach" />
+          <ScalarProperty Name="html" ColumnName="html" />
+          <ScalarProperty Name="tempid" ColumnName="tempid" />
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="sentby" ColumnName="sentby" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="filter" ColumnName="filter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_queue">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_queue">
+        <MappingFragment StoreEntitySet="ampu_acymailing_queue">
+          <ScalarProperty Name="senddate" ColumnName="senddate" />
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="mailid" ColumnName="mailid" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="try" ColumnName="try" />
+          <ScalarProperty Name="paramqueue" ColumnName="paramqueue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_rules">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_rules">
+        <MappingFragment StoreEntitySet="ampu_acymailing_rules">
+          <ScalarProperty Name="ruleid" ColumnName="ruleid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="regex" ColumnName="regex" />
+          <ScalarProperty Name="executed_on" ColumnName="executed_on" />
+          <ScalarProperty Name="action_message" ColumnName="action_message" />
+          <ScalarProperty Name="action_user" ColumnName="action_user" />
+          <ScalarProperty Name="published" ColumnName="published" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_stats">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_stats">
+        <MappingFragment StoreEntitySet="ampu_acymailing_stats">
+          <ScalarProperty Name="mailid" ColumnName="mailid" />
+          <ScalarProperty Name="senthtml" ColumnName="senthtml" />
+          <ScalarProperty Name="senttext" ColumnName="senttext" />
+          <ScalarProperty Name="senddate" ColumnName="senddate" />
+          <ScalarProperty Name="openunique" ColumnName="openunique" />
+          <ScalarProperty Name="opentotal" ColumnName="opentotal" />
+          <ScalarProperty Name="bounceunique" ColumnName="bounceunique" />
+          <ScalarProperty Name="fail" ColumnName="fail" />
+          <ScalarProperty Name="clicktotal" ColumnName="clicktotal" />
+          <ScalarProperty Name="clickunique" ColumnName="clickunique" />
+          <ScalarProperty Name="unsub" ColumnName="unsub" />
+          <ScalarProperty Name="forward" ColumnName="forward" />
+          <ScalarProperty Name="bouncedetails" ColumnName="bouncedetails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_subscriber">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_subscriber">
+        <MappingFragment StoreEntitySet="ampu_acymailing_subscriber">
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="confirmed" ColumnName="confirmed" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="accept" ColumnName="accept" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="html" ColumnName="html" />
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="confirmed_date" ColumnName="confirmed_date" />
+          <ScalarProperty Name="confirmed_ip" ColumnName="confirmed_ip" />
+          <ScalarProperty Name="lastopen_date" ColumnName="lastopen_date" />
+          <ScalarProperty Name="lastclick_date" ColumnName="lastclick_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_subscriber_copy">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_subscriber_copy">
+        <MappingFragment StoreEntitySet="ampu_acymailing_subscriber_copy">
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="confirmed" ColumnName="confirmed" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="accept" ColumnName="accept" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="html" ColumnName="html" />
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="confirmed_date" ColumnName="confirmed_date" />
+          <ScalarProperty Name="confirmed_ip" ColumnName="confirmed_ip" />
+          <ScalarProperty Name="lastopen_date" ColumnName="lastopen_date" />
+          <ScalarProperty Name="lastclick_date" ColumnName="lastclick_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_template">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_template">
+        <MappingFragment StoreEntitySet="ampu_acymailing_template">
+          <ScalarProperty Name="tempid" ColumnName="tempid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="altbody" ColumnName="altbody" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="namekey" ColumnName="namekey" />
+          <ScalarProperty Name="styles" ColumnName="styles" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="stylesheet" ColumnName="stylesheet" />
+          <ScalarProperty Name="fromname" ColumnName="fromname" />
+          <ScalarProperty Name="fromemail" ColumnName="fromemail" />
+          <ScalarProperty Name="replyname" ColumnName="replyname" />
+          <ScalarProperty Name="replyemail" ColumnName="replyemail" />
+          <ScalarProperty Name="thumb" ColumnName="thumb" />
+          <ScalarProperty Name="readmore" ColumnName="readmore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_url">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_url">
+        <MappingFragment StoreEntitySet="ampu_acymailing_url">
+          <ScalarProperty Name="urlid" ColumnName="urlid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_urlclick">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_urlclick">
+        <MappingFragment StoreEntitySet="ampu_acymailing_urlclick">
+          <ScalarProperty Name="urlid" ColumnName="urlid" />
+          <ScalarProperty Name="mailid" ColumnName="mailid" />
+          <ScalarProperty Name="click" ColumnName="click" />
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_userstats">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_userstats">
+        <MappingFragment StoreEntitySet="ampu_acymailing_userstats">
+          <ScalarProperty Name="mailid" ColumnName="mailid" />
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="html" ColumnName="html" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="senddate" ColumnName="senddate" />
+          <ScalarProperty Name="open" ColumnName="open" />
+          <ScalarProperty Name="opendate" ColumnName="opendate" />
+          <ScalarProperty Name="bounce" ColumnName="bounce" />
+          <ScalarProperty Name="fail" ColumnName="fail" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_assets">
+      <EntityTypeMapping TypeName="uspaModel.ampu_assets">
+        <MappingFragment StoreEntitySet="ampu_assets">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="lft" ColumnName="lft" />
+          <ScalarProperty Name="rgt" ColumnName="rgt" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="rules" ColumnName="rules" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_associations">
+      <EntityTypeMapping TypeName="uspaModel.ampu_associations">
+        <MappingFragment StoreEntitySet="ampu_associations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="context" ColumnName="context" />
+          <ScalarProperty Name="key" ColumnName="key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_banner_clients">
+      <EntityTypeMapping TypeName="uspaModel.ampu_banner_clients">
+        <MappingFragment StoreEntitySet="ampu_banner_clients">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="extrainfo" ColumnName="extrainfo" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="own_prefix" ColumnName="own_prefix" />
+          <ScalarProperty Name="metakey_prefix" ColumnName="metakey_prefix" />
+          <ScalarProperty Name="purchase_type" ColumnName="purchase_type" />
+          <ScalarProperty Name="track_clicks" ColumnName="track_clicks" />
+          <ScalarProperty Name="track_impressions" ColumnName="track_impressions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_banner_tracks">
+      <EntityTypeMapping TypeName="uspaModel.ampu_banner_tracks">
+        <MappingFragment StoreEntitySet="ampu_banner_tracks">
+          <ScalarProperty Name="track_date" ColumnName="track_date" />
+          <ScalarProperty Name="track_type" ColumnName="track_type" />
+          <ScalarProperty Name="banner_id" ColumnName="banner_id" />
+          <ScalarProperty Name="count" ColumnName="count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_banners">
+      <EntityTypeMapping TypeName="uspaModel.ampu_banners">
+        <MappingFragment StoreEntitySet="ampu_banners">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="imptotal" ColumnName="imptotal" />
+          <ScalarProperty Name="impmade" ColumnName="impmade" />
+          <ScalarProperty Name="clicks" ColumnName="clicks" />
+          <ScalarProperty Name="clickurl" ColumnName="clickurl" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="custombannercode" ColumnName="custombannercode" />
+          <ScalarProperty Name="sticky" ColumnName="sticky" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="own_prefix" ColumnName="own_prefix" />
+          <ScalarProperty Name="metakey_prefix" ColumnName="metakey_prefix" />
+          <ScalarProperty Name="purchase_type" ColumnName="purchase_type" />
+          <ScalarProperty Name="track_clicks" ColumnName="track_clicks" />
+          <ScalarProperty Name="track_impressions" ColumnName="track_impressions" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="publish_up" ColumnName="publish_up" />
+          <ScalarProperty Name="publish_down" ColumnName="publish_down" />
+          <ScalarProperty Name="reset" ColumnName="reset" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_categories">
+      <EntityTypeMapping TypeName="uspaModel.ampu_categories">
+        <MappingFragment StoreEntitySet="ampu_categories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="asset_id" ColumnName="asset_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="lft" ColumnName="lft" />
+          <ScalarProperty Name="rgt" ColumnName="rgt" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadata" ColumnName="metadata" />
+          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+          <ScalarProperty Name="created_time" ColumnName="created_time" />
+          <ScalarProperty Name="modified_user_id" ColumnName="modified_user_id" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_contact_details">
+      <EntityTypeMapping TypeName="uspaModel.ampu_contact_details">
+        <MappingFragment StoreEntitySet="ampu_contact_details">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="con_position" ColumnName="con_position" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="suburb" ColumnName="suburb" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="misc" ColumnName="misc" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="imagepos" ColumnName="imagepos" />
+          <ScalarProperty Name="email_to" ColumnName="email_to" />
+          <ScalarProperty Name="default_con" ColumnName="default_con" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="webpage" ColumnName="webpage" />
+          <ScalarProperty Name="sortname1" ColumnName="sortname1" />
+          <ScalarProperty Name="sortname2" ColumnName="sortname2" />
+          <ScalarProperty Name="sortname3" ColumnName="sortname3" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_by_alias" ColumnName="created_by_alias" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="metadata" ColumnName="metadata" />
+          <ScalarProperty Name="featured" ColumnName="featured" />
+          <ScalarProperty Name="xreference" ColumnName="xreference" />
+          <ScalarProperty Name="publish_up" ColumnName="publish_up" />
+          <ScalarProperty Name="publish_down" ColumnName="publish_down" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_content">
+      <EntityTypeMapping TypeName="uspaModel.ampu_content">
+        <MappingFragment StoreEntitySet="ampu_content">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="asset_id" ColumnName="asset_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="title_alias" ColumnName="title_alias" />
+          <ScalarProperty Name="introtext" ColumnName="introtext" />
+          <ScalarProperty Name="fulltext" ColumnName="fulltext" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="sectionid" ColumnName="sectionid" />
+          <ScalarProperty Name="mask" ColumnName="mask" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_by_alias" ColumnName="created_by_alias" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="publish_up" ColumnName="publish_up" />
+          <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="publish_down" ColumnName="publish_down" />
+          <ScalarProperty Name="urls" ColumnName="urls" />
+          <ScalarProperty Name="attribs" ColumnName="attribs" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="metadata" ColumnName="metadata" />
+          <ScalarProperty Name="featured" ColumnName="featured" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="xreference" ColumnName="xreference" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_content_frontpage">
+      <EntityTypeMapping TypeName="uspaModel.ampu_content_frontpage">
+        <MappingFragment StoreEntitySet="ampu_content_frontpage">
+          <ScalarProperty Name="content_id" ColumnName="content_id" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_content_rating">
+      <EntityTypeMapping TypeName="uspaModel.ampu_content_rating">
+        <MappingFragment StoreEntitySet="ampu_content_rating">
+          <ScalarProperty Name="content_id" ColumnName="content_id" />
+          <ScalarProperty Name="rating_sum" ColumnName="rating_sum" />
+          <ScalarProperty Name="rating_count" ColumnName="rating_count" />
+          <ScalarProperty Name="lastip" ColumnName="lastip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_easybook">
+      <EntityTypeMapping TypeName="uspaModel.ampu_easybook">
+        <MappingFragment StoreEntitySet="ampu_easybook">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gbip" ColumnName="gbip" />
+          <ScalarProperty Name="gbname" ColumnName="gbname" />
+          <ScalarProperty Name="gbmail" ColumnName="gbmail" />
+          <ScalarProperty Name="gbmailshow" ColumnName="gbmailshow" />
+          <ScalarProperty Name="gbloca" ColumnName="gbloca" />
+          <ScalarProperty Name="gbpage" ColumnName="gbpage" />
+          <ScalarProperty Name="gbvote" ColumnName="gbvote" />
+          <ScalarProperty Name="gbtext" ColumnName="gbtext" />
+          <ScalarProperty Name="gbdate" ColumnName="gbdate" />
+          <ScalarProperty Name="gbtitle" ColumnName="gbtitle" />
+          <ScalarProperty Name="gbcomment" ColumnName="gbcomment" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="gbicq" ColumnName="gbicq" />
+          <ScalarProperty Name="gbaim" ColumnName="gbaim" />
+          <ScalarProperty Name="gbmsn" ColumnName="gbmsn" />
+          <ScalarProperty Name="gbyah" ColumnName="gbyah" />
+          <ScalarProperty Name="gbskype" ColumnName="gbskype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_easybook_badwords">
+      <EntityTypeMapping TypeName="uspaModel.ampu_easybook_badwords">
+        <MappingFragment StoreEntitySet="ampu_easybook_badwords">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="word" ColumnName="word" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_extensions">
+      <EntityTypeMapping TypeName="uspaModel.ampu_extensions">
+        <MappingFragment StoreEntitySet="ampu_extensions">
+          <ScalarProperty Name="extension_id" ColumnName="extension_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="element" ColumnName="element" />
+          <ScalarProperty Name="folder" ColumnName="folder" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="protected" ColumnName="protected" />
+          <ScalarProperty Name="manifest_cache" ColumnName="manifest_cache" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="custom_data" ColumnName="custom_data" />
+          <ScalarProperty Name="system_data" ColumnName="system_data" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_filters">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_filters">
+        <MappingFragment StoreEntitySet="ampu_finder_filters">
+          <ScalarProperty Name="filter_id" ColumnName="filter_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_by_alias" ColumnName="created_by_alias" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="map_count" ColumnName="map_count" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links">
+        <MappingFragment StoreEntitySet="ampu_finder_links">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="route" ColumnName="route" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="indexdate" ColumnName="indexdate" />
+          <ScalarProperty Name="md5sum" ColumnName="md5sum" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="publish_start_date" ColumnName="publish_start_date" />
+          <ScalarProperty Name="publish_end_date" ColumnName="publish_end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="list_price" ColumnName="list_price" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="object" ColumnName="object" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms0">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms0">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms0">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms1">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms1">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms1">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms2">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms2">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms2">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms3">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms3">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms3">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms4">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms4">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms4">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms5">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms5">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms5">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms6">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms6">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms6">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms7">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms7">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms7">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms8">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms8">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms8">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_terms9">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_terms9">
+        <MappingFragment StoreEntitySet="ampu_finder_links_terms9">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_termsa">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_termsa">
+        <MappingFragment StoreEntitySet="ampu_finder_links_termsa">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_termsb">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_termsb">
+        <MappingFragment StoreEntitySet="ampu_finder_links_termsb">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_termsc">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_termsc">
+        <MappingFragment StoreEntitySet="ampu_finder_links_termsc">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_termsd">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_termsd">
+        <MappingFragment StoreEntitySet="ampu_finder_links_termsd">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_termse">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_termse">
+        <MappingFragment StoreEntitySet="ampu_finder_links_termse">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_links_termsf">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_links_termsf">
+        <MappingFragment StoreEntitySet="ampu_finder_links_termsf">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_taxonomy">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_taxonomy">
+        <MappingFragment StoreEntitySet="ampu_finder_taxonomy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_taxonomy_map">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_taxonomy_map">
+        <MappingFragment StoreEntitySet="ampu_finder_taxonomy_map">
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="node_id" ColumnName="node_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_terms">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_terms">
+        <MappingFragment StoreEntitySet="ampu_finder_terms">
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="stem" ColumnName="stem" />
+          <ScalarProperty Name="common" ColumnName="common" />
+          <ScalarProperty Name="phrase" ColumnName="phrase" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="soundex" ColumnName="soundex" />
+          <ScalarProperty Name="links" ColumnName="links" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_types">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_types">
+        <MappingFragment StoreEntitySet="ampu_finder_types">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="mime" ColumnName="mime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments">
+        <MappingFragment StoreEntitySet="ampu_jcomments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="thread_id" ColumnName="thread_id" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="object_group" ColumnName="object_group" />
+          <ScalarProperty Name="object_params" ColumnName="object_params" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="homepage" ColumnName="homepage" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="isgood" ColumnName="isgood" />
+          <ScalarProperty Name="ispoor" ColumnName="ispoor" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="subscribe" ColumnName="subscribe" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="editor" ColumnName="editor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments_blacklist">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments_blacklist">
+        <MappingFragment StoreEntitySet="ampu_jcomments_blacklist">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="expire" ColumnName="expire" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="editor" ColumnName="editor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments_custom_bbcodes">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments_custom_bbcodes">
+        <MappingFragment StoreEntitySet="ampu_jcomments_custom_bbcodes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="simple_pattern" ColumnName="simple_pattern" />
+          <ScalarProperty Name="simple_replacement_html" ColumnName="simple_replacement_html" />
+          <ScalarProperty Name="simple_replacement_text" ColumnName="simple_replacement_text" />
+          <ScalarProperty Name="pattern" ColumnName="pattern" />
+          <ScalarProperty Name="replacement_html" ColumnName="replacement_html" />
+          <ScalarProperty Name="replacement_text" ColumnName="replacement_text" />
+          <ScalarProperty Name="button_acl" ColumnName="button_acl" />
+          <ScalarProperty Name="button_open_tag" ColumnName="button_open_tag" />
+          <ScalarProperty Name="button_close_tag" ColumnName="button_close_tag" />
+          <ScalarProperty Name="button_title" ColumnName="button_title" />
+          <ScalarProperty Name="button_prompt" ColumnName="button_prompt" />
+          <ScalarProperty Name="button_image" ColumnName="button_image" />
+          <ScalarProperty Name="button_css" ColumnName="button_css" />
+          <ScalarProperty Name="button_enabled" ColumnName="button_enabled" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="published" ColumnName="published" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments_objects">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments_objects">
+        <MappingFragment StoreEntitySet="ampu_jcomments_objects">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="object_group" ColumnName="object_group" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="expired" ColumnName="expired" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments_reports">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments_reports">
+        <MappingFragment StoreEntitySet="ampu_jcomments_reports">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="commentid" ColumnName="commentid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments_settings">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments_settings">
+        <MappingFragment StoreEntitySet="ampu_jcomments_settings">
+          <ScalarProperty Name="component" ColumnName="component" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments_subscriptions">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments_subscriptions">
+        <MappingFragment StoreEntitySet="ampu_jcomments_subscriptions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="object_group" ColumnName="object_group" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="hash" ColumnName="hash" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="source" ColumnName="source" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments_version">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments_version">
+        <MappingFragment StoreEntitySet="ampu_jcomments_version">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="previous" ColumnName="previous" />
+          <ScalarProperty Name="installed" ColumnName="installed" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_jcomments_votes">
+      <EntityTypeMapping TypeName="uspaModel.ampu_jcomments_votes">
+        <MappingFragment StoreEntitySet="ampu_jcomments_votes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="commentid" ColumnName="commentid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_announcement">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_announcement">
+        <MappingFragment StoreEntitySet="ampu_kunena_announcement">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="sdescription" ColumnName="sdescription" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="showdate" ColumnName="showdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_attachments">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_attachments">
+        <MappingFragment StoreEntitySet="ampu_kunena_attachments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mesid" ColumnName="mesid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="hash" ColumnName="hash" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="folder" ColumnName="folder" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_categories">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_categories">
+        <MappingFragment StoreEntitySet="ampu_kunena_categories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="icon_id" ColumnName="icon_id" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="accesstype" ColumnName="accesstype" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="pub_access" ColumnName="pub_access" />
+          <ScalarProperty Name="pub_recurse" ColumnName="pub_recurse" />
+          <ScalarProperty Name="admin_access" ColumnName="admin_access" />
+          <ScalarProperty Name="admin_recurse" ColumnName="admin_recurse" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="channels" ColumnName="channels" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="allow_anonymous" ColumnName="allow_anonymous" />
+          <ScalarProperty Name="post_anonymous" ColumnName="post_anonymous" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="headerdesc" ColumnName="headerdesc" />
+          <ScalarProperty Name="class_sfx" ColumnName="class_sfx" />
+          <ScalarProperty Name="allow_polls" ColumnName="allow_polls" />
+          <ScalarProperty Name="topic_ordering" ColumnName="topic_ordering" />
+          <ScalarProperty Name="numTopics" ColumnName="numTopics" />
+          <ScalarProperty Name="numPosts" ColumnName="numPosts" />
+          <ScalarProperty Name="last_topic_id" ColumnName="last_topic_id" />
+          <ScalarProperty Name="last_post_id" ColumnName="last_post_id" />
+          <ScalarProperty Name="last_post_time" ColumnName="last_post_time" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_configuration">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_configuration">
+        <MappingFragment StoreEntitySet="ampu_kunena_configuration">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_keywords">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_keywords">
+        <MappingFragment StoreEntitySet="ampu_kunena_keywords">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="public_count" ColumnName="public_count" />
+          <ScalarProperty Name="total_count" ColumnName="total_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_messages">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_messages">
+        <MappingFragment StoreEntitySet="ampu_kunena_messages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="thread" ColumnName="thread" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="topic_emoticon" ColumnName="topic_emoticon" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="hold" ColumnName="hold" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="moved" ColumnName="moved" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="modified_reason" ColumnName="modified_reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_messages_text">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_messages_text">
+        <MappingFragment StoreEntitySet="ampu_kunena_messages_text">
+          <ScalarProperty Name="mesid" ColumnName="mesid" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_polls">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_polls">
+        <MappingFragment StoreEntitySet="ampu_kunena_polls">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="threadid" ColumnName="threadid" />
+          <ScalarProperty Name="polltimetolive" ColumnName="polltimetolive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_polls_options">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_polls_options">
+        <MappingFragment StoreEntitySet="ampu_kunena_polls_options">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pollid" ColumnName="pollid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="votes" ColumnName="votes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_ranks">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_ranks">
+        <MappingFragment StoreEntitySet="ampu_kunena_ranks">
+          <ScalarProperty Name="rank_id" ColumnName="rank_id" />
+          <ScalarProperty Name="rank_title" ColumnName="rank_title" />
+          <ScalarProperty Name="rank_min" ColumnName="rank_min" />
+          <ScalarProperty Name="rank_special" ColumnName="rank_special" />
+          <ScalarProperty Name="rank_image" ColumnName="rank_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_sessions">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_sessions">
+        <MappingFragment StoreEntitySet="ampu_kunena_sessions">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="allowed" ColumnName="allowed" />
+          <ScalarProperty Name="lasttime" ColumnName="lasttime" />
+          <ScalarProperty Name="readtopics" ColumnName="readtopics" />
+          <ScalarProperty Name="currvisit" ColumnName="currvisit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_smileys">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_smileys">
+        <MappingFragment StoreEntitySet="ampu_kunena_smileys">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="greylocation" ColumnName="greylocation" />
+          <ScalarProperty Name="emoticonbar" ColumnName="emoticonbar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_topics">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_topics">
+        <MappingFragment StoreEntitySet="ampu_kunena_topics">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="icon_id" ColumnName="icon_id" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="hold" ColumnName="hold" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="posts" ColumnName="posts" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="attachments" ColumnName="attachments" />
+          <ScalarProperty Name="poll_id" ColumnName="poll_id" />
+          <ScalarProperty Name="moved_id" ColumnName="moved_id" />
+          <ScalarProperty Name="first_post_id" ColumnName="first_post_id" />
+          <ScalarProperty Name="first_post_time" ColumnName="first_post_time" />
+          <ScalarProperty Name="first_post_userid" ColumnName="first_post_userid" />
+          <ScalarProperty Name="first_post_message" ColumnName="first_post_message" />
+          <ScalarProperty Name="first_post_guest_name" ColumnName="first_post_guest_name" />
+          <ScalarProperty Name="last_post_id" ColumnName="last_post_id" />
+          <ScalarProperty Name="last_post_time" ColumnName="last_post_time" />
+          <ScalarProperty Name="last_post_userid" ColumnName="last_post_userid" />
+          <ScalarProperty Name="last_post_message" ColumnName="last_post_message" />
+          <ScalarProperty Name="last_post_guest_name" ColumnName="last_post_guest_name" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_user_categories">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_user_categories">
+        <MappingFragment StoreEntitySet="ampu_kunena_user_categories">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="allreadtime" ColumnName="allreadtime" />
+          <ScalarProperty Name="subscribed" ColumnName="subscribed" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_users">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_users">
+        <MappingFragment StoreEntitySet="ampu_kunena_users">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="view" ColumnName="view" />
+          <ScalarProperty Name="signature" ColumnName="signature" />
+          <ScalarProperty Name="moderator" ColumnName="moderator" />
+          <ScalarProperty Name="banned" ColumnName="banned" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="posts" ColumnName="posts" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="karma" ColumnName="karma" />
+          <ScalarProperty Name="karma_time" ColumnName="karma_time" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="uhits" ColumnName="uhits" />
+          <ScalarProperty Name="personalText" ColumnName="personalText" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="icq" ColumnName="icq" />
+          <ScalarProperty Name="aim" ColumnName="aim" />
+          <ScalarProperty Name="yim" ColumnName="yim" />
+          <ScalarProperty Name="msn" ColumnName="msn" />
+          <ScalarProperty Name="skype" ColumnName="skype" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="gtalk" ColumnName="gtalk" />
+          <ScalarProperty Name="myspace" ColumnName="myspace" />
+          <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+          <ScalarProperty Name="delicious" ColumnName="delicious" />
+          <ScalarProperty Name="friendfeed" ColumnName="friendfeed" />
+          <ScalarProperty Name="digg" ColumnName="digg" />
+          <ScalarProperty Name="blogspot" ColumnName="blogspot" />
+          <ScalarProperty Name="flickr" ColumnName="flickr" />
+          <ScalarProperty Name="bebo" ColumnName="bebo" />
+          <ScalarProperty Name="websitename" ColumnName="websitename" />
+          <ScalarProperty Name="websiteurl" ColumnName="websiteurl" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="hideEmail" ColumnName="hideEmail" />
+          <ScalarProperty Name="showOnline" ColumnName="showOnline" />
+          <ScalarProperty Name="thankyou" ColumnName="thankyou" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_users_banned">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_users_banned">
+        <MappingFragment StoreEntitySet="ampu_kunena_users_banned">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="blocked" ColumnName="blocked" />
+          <ScalarProperty Name="expiration" ColumnName="expiration" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_time" ColumnName="created_time" />
+          <ScalarProperty Name="reason_private" ColumnName="reason_private" />
+          <ScalarProperty Name="reason_public" ColumnName="reason_public" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_version">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_version">
+        <MappingFragment StoreEntitySet="ampu_kunena_version">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="versiondate" ColumnName="versiondate" />
+          <ScalarProperty Name="installdate" ColumnName="installdate" />
+          <ScalarProperty Name="build" ColumnName="build" />
+          <ScalarProperty Name="versionname" ColumnName="versionname" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_languages">
+      <EntityTypeMapping TypeName="uspaModel.ampu_languages">
+        <MappingFragment StoreEntitySet="ampu_languages">
+          <ScalarProperty Name="lang_id" ColumnName="lang_id" />
+          <ScalarProperty Name="lang_code" ColumnName="lang_code" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="title_native" ColumnName="title_native" />
+          <ScalarProperty Name="sef" ColumnName="sef" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="sitename" ColumnName="sitename" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_menu">
+      <EntityTypeMapping TypeName="uspaModel.ampu_menu">
+        <MappingFragment StoreEntitySet="ampu_menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menutype" ColumnName="menutype" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="component_id" ColumnName="component_id" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="browserNav" ColumnName="browserNav" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="template_style_id" ColumnName="template_style_id" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="lft" ColumnName="lft" />
+          <ScalarProperty Name="rgt" ColumnName="rgt" />
+          <ScalarProperty Name="home" ColumnName="home" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_menu_types">
+      <EntityTypeMapping TypeName="uspaModel.ampu_menu_types">
+        <MappingFragment StoreEntitySet="ampu_menu_types">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menutype" ColumnName="menutype" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_messages">
+      <EntityTypeMapping TypeName="uspaModel.ampu_messages">
+        <MappingFragment StoreEntitySet="ampu_messages">
+          <ScalarProperty Name="message_id" ColumnName="message_id" />
+          <ScalarProperty Name="user_id_from" ColumnName="user_id_from" />
+          <ScalarProperty Name="user_id_to" ColumnName="user_id_to" />
+          <ScalarProperty Name="folder_id" ColumnName="folder_id" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_modules">
+      <EntityTypeMapping TypeName="uspaModel.ampu_modules">
+        <MappingFragment StoreEntitySet="ampu_modules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="publish_up" ColumnName="publish_up" />
+          <ScalarProperty Name="publish_down" ColumnName="publish_down" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="module" ColumnName="module" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="showtitle" ColumnName="showtitle" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_modules_menu">
+      <EntityTypeMapping TypeName="uspaModel.ampu_modules_menu">
+        <MappingFragment StoreEntitySet="ampu_modules_menu">
+          <ScalarProperty Name="moduleid" ColumnName="moduleid" />
+          <ScalarProperty Name="menuid" ColumnName="menuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_newsfeeds">
+      <EntityTypeMapping TypeName="uspaModel.ampu_newsfeeds">
+        <MappingFragment StoreEntitySet="ampu_newsfeeds">
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="numarticles" ColumnName="numarticles" />
+          <ScalarProperty Name="cache_time" ColumnName="cache_time" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="rtl" ColumnName="rtl" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_by_alias" ColumnName="created_by_alias" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="metadata" ColumnName="metadata" />
+          <ScalarProperty Name="xreference" ColumnName="xreference" />
+          <ScalarProperty Name="publish_up" ColumnName="publish_up" />
+          <ScalarProperty Name="publish_down" ColumnName="publish_down" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_overrider">
+      <EntityTypeMapping TypeName="uspaModel.ampu_overrider">
+        <MappingFragment StoreEntitySet="ampu_overrider">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="constant" ColumnName="constant" />
+          <ScalarProperty Name="string" ColumnName="string" />
+          <ScalarProperty Name="file" ColumnName="file" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery">
+        <MappingFragment StoreEntitySet="ampu_phocagallery">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="zoom" ColumnName="zoom" />
+          <ScalarProperty Name="geotitle" ColumnName="geotitle" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="videocode" ColumnName="videocode" />
+          <ScalarProperty Name="vmproductid" ColumnName="vmproductid" />
+          <ScalarProperty Name="imgorigsize" ColumnName="imgorigsize" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="metadata" ColumnName="metadata" />
+          <ScalarProperty Name="extlink1" ColumnName="extlink1" />
+          <ScalarProperty Name="extlink2" ColumnName="extlink2" />
+          <ScalarProperty Name="extid" ColumnName="extid" />
+          <ScalarProperty Name="exttype" ColumnName="exttype" />
+          <ScalarProperty Name="extl" ColumnName="extl" />
+          <ScalarProperty Name="extm" ColumnName="extm" />
+          <ScalarProperty Name="exts" ColumnName="exts" />
+          <ScalarProperty Name="exto" ColumnName="exto" />
+          <ScalarProperty Name="extw" ColumnName="extw" />
+          <ScalarProperty Name="exth" ColumnName="exth" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_categories">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_categories">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_categories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="owner_id" ColumnName="owner_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="image_position" ColumnName="image_position" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="editor" ColumnName="editor" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="accessuserid" ColumnName="accessuserid" />
+          <ScalarProperty Name="uploaduserid" ColumnName="uploaduserid" />
+          <ScalarProperty Name="deleteuserid" ColumnName="deleteuserid" />
+          <ScalarProperty Name="userfolder" ColumnName="userfolder" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="zoom" ColumnName="zoom" />
+          <ScalarProperty Name="geotitle" ColumnName="geotitle" />
+          <ScalarProperty Name="extid" ColumnName="extid" />
+          <ScalarProperty Name="exta" ColumnName="exta" />
+          <ScalarProperty Name="extu" ColumnName="extu" />
+          <ScalarProperty Name="extauth" ColumnName="extauth" />
+          <ScalarProperty Name="extfbuid" ColumnName="extfbuid" />
+          <ScalarProperty Name="extfbcatid" ColumnName="extfbcatid" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="metadata" ColumnName="metadata" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_comments">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_comments">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_comments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_fb_users">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_fb_users">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_fb_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="appid" ColumnName="appid" />
+          <ScalarProperty Name="appsid" ColumnName="appsid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="secret" ColumnName="secret" />
+          <ScalarProperty Name="base_domain" ColumnName="base_domain" />
+          <ScalarProperty Name="expires" ColumnName="expires" />
+          <ScalarProperty Name="session_key" ColumnName="session_key" />
+          <ScalarProperty Name="access_token" ColumnName="access_token" />
+          <ScalarProperty Name="sig" ColumnName="sig" />
+          <ScalarProperty Name="fanpageid" ColumnName="fanpageid" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_img_comments">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_img_comments">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_img_comments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="imgid" ColumnName="imgid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_img_votes">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_img_votes">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_img_votes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="imgid" ColumnName="imgid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_img_votes_statistics">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_img_votes_statistics">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_img_votes_statistics">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="imgid" ColumnName="imgid" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="average" ColumnName="average" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_tags">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_tags">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_tags">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="link_cat" ColumnName="link_cat" />
+          <ScalarProperty Name="link_ext" ColumnName="link_ext" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_tags_ref">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_tags_ref">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_tags_ref">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="imgid" ColumnName="imgid" />
+          <ScalarProperty Name="tagid" ColumnName="tagid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_user">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_user">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_votes">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_votes">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_votes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_phocagallery_votes_statistics">
+      <EntityTypeMapping TypeName="uspaModel.ampu_phocagallery_votes_statistics">
+        <MappingFragment StoreEntitySet="ampu_phocagallery_votes_statistics">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="average" ColumnName="average" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_redirect_links">
+      <EntityTypeMapping TypeName="uspaModel.ampu_redirect_links">
+        <MappingFragment StoreEntitySet="ampu_redirect_links">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="old_url" ColumnName="old_url" />
+          <ScalarProperty Name="new_url" ColumnName="new_url" />
+          <ScalarProperty Name="referer" ColumnName="referer" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_schemas">
+      <EntityTypeMapping TypeName="uspaModel.ampu_schemas">
+        <MappingFragment StoreEntitySet="ampu_schemas">
+          <ScalarProperty Name="extension_id" ColumnName="extension_id" />
+          <ScalarProperty Name="version_id" ColumnName="version_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_session">
+      <EntityTypeMapping TypeName="uspaModel.ampu_session">
+        <MappingFragment StoreEntitySet="ampu_session">
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="guest" ColumnName="guest" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_template_styles">
+      <EntityTypeMapping TypeName="uspaModel.ampu_template_styles">
+        <MappingFragment StoreEntitySet="ampu_template_styles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="template" ColumnName="template" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="home" ColumnName="home" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_update_categories">
+      <EntityTypeMapping TypeName="uspaModel.ampu_update_categories">
+        <MappingFragment StoreEntitySet="ampu_update_categories">
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="updatesite" ColumnName="updatesite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_update_sites">
+      <EntityTypeMapping TypeName="uspaModel.ampu_update_sites">
+        <MappingFragment StoreEntitySet="ampu_update_sites">
+          <ScalarProperty Name="update_site_id" ColumnName="update_site_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="last_check_timestamp" ColumnName="last_check_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_update_sites_extensions">
+      <EntityTypeMapping TypeName="uspaModel.ampu_update_sites_extensions">
+        <MappingFragment StoreEntitySet="ampu_update_sites_extensions">
+          <ScalarProperty Name="update_site_id" ColumnName="update_site_id" />
+          <ScalarProperty Name="extension_id" ColumnName="extension_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_updates">
+      <EntityTypeMapping TypeName="uspaModel.ampu_updates">
+        <MappingFragment StoreEntitySet="ampu_updates">
+          <ScalarProperty Name="update_id" ColumnName="update_id" />
+          <ScalarProperty Name="update_site_id" ColumnName="update_site_id" />
+          <ScalarProperty Name="extension_id" ColumnName="extension_id" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="element" ColumnName="element" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="folder" ColumnName="folder" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="detailsurl" ColumnName="detailsurl" />
+          <ScalarProperty Name="infourl" ColumnName="infourl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_user_notes">
+      <EntityTypeMapping TypeName="uspaModel.ampu_user_notes">
+        <MappingFragment StoreEntitySet="ampu_user_notes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="created_user_id" ColumnName="created_user_id" />
+          <ScalarProperty Name="created_time" ColumnName="created_time" />
+          <ScalarProperty Name="modified_user_id" ColumnName="modified_user_id" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="review_time" ColumnName="review_time" />
+          <ScalarProperty Name="publish_up" ColumnName="publish_up" />
+          <ScalarProperty Name="publish_down" ColumnName="publish_down" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_user_usergroup_map">
+      <EntityTypeMapping TypeName="uspaModel.ampu_user_usergroup_map">
+        <MappingFragment StoreEntitySet="ampu_user_usergroup_map">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_usergroups">
+      <EntityTypeMapping TypeName="uspaModel.ampu_usergroups">
+        <MappingFragment StoreEntitySet="ampu_usergroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="lft" ColumnName="lft" />
+          <ScalarProperty Name="rgt" ColumnName="rgt" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_users">
+      <EntityTypeMapping TypeName="uspaModel.ampu_users">
+        <MappingFragment StoreEntitySet="ampu_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="block" ColumnName="block" />
+          <ScalarProperty Name="sendEmail" ColumnName="sendEmail" />
+          <ScalarProperty Name="registerDate" ColumnName="registerDate" />
+          <ScalarProperty Name="lastvisitDate" ColumnName="lastvisitDate" />
+          <ScalarProperty Name="activation" ColumnName="activation" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="port" ColumnName="port" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_viewlevels">
+      <EntityTypeMapping TypeName="uspaModel.ampu_viewlevels">
+        <MappingFragment StoreEntitySet="ampu_viewlevels">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="rules" ColumnName="rules" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_weblinks">
+      <EntityTypeMapping TypeName="uspaModel.ampu_weblinks">
+        <MappingFragment StoreEntitySet="ampu_weblinks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="archived" ColumnName="archived" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_by_alias" ColumnName="created_by_alias" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="metadata" ColumnName="metadata" />
+          <ScalarProperty Name="featured" ColumnName="featured" />
+          <ScalarProperty Name="xreference" ColumnName="xreference" />
+          <ScalarProperty Name="publish_up" ColumnName="publish_up" />
+          <ScalarProperty Name="publish_down" ColumnName="publish_down" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_wf_profiles">
+      <EntityTypeMapping TypeName="uspaModel.ampu_wf_profiles">
+        <MappingFragment StoreEntitySet="ampu_wf_profiles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="users" ColumnName="users" />
+          <ScalarProperty Name="types" ColumnName="types" />
+          <ScalarProperty Name="components" ColumnName="components" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="device" ColumnName="device" />
+          <ScalarProperty Name="rows" ColumnName="rows" />
+          <ScalarProperty Name="plugins" ColumnName="plugins" />
+          <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+          <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+          <ScalarProperty Name="checked_out_time" ColumnName="checked_out_time" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_xmap_items">
+      <EntityTypeMapping TypeName="uspaModel.ampu_xmap_items">
+        <MappingFragment StoreEntitySet="ampu_xmap_items">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="itemid" ColumnName="itemid" />
+          <ScalarProperty Name="view" ColumnName="view" />
+          <ScalarProperty Name="sitemap_id" ColumnName="sitemap_id" />
+          <ScalarProperty Name="properties" ColumnName="properties" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_xmap_sitemap">
+      <EntityTypeMapping TypeName="uspaModel.ampu_xmap_sitemap">
+        <MappingFragment StoreEntitySet="ampu_xmap_sitemap">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="introtext" ColumnName="introtext" />
+          <ScalarProperty Name="metadesc" ColumnName="metadesc" />
+          <ScalarProperty Name="metakey" ColumnName="metakey" />
+          <ScalarProperty Name="attribs" ColumnName="attribs" />
+          <ScalarProperty Name="selections" ColumnName="selections" />
+          <ScalarProperty Name="excluded_items" ColumnName="excluded_items" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="count_xml" ColumnName="count_xml" />
+          <ScalarProperty Name="count_html" ColumnName="count_html" />
+          <ScalarProperty Name="views_xml" ColumnName="views_xml" />
+          <ScalarProperty Name="views_html" ColumnName="views_html" />
+          <ScalarProperty Name="lastvisit_xml" ColumnName="lastvisit_xml" />
+          <ScalarProperty Name="lastvisit_html" ColumnName="lastvisit_html" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blank">
+      <EntityTypeMapping TypeName="uspaModel.blank">
+        <MappingFragment StoreEntitySet="blank">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="name_ua" ColumnName="name_ua" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="history">
+      <EntityTypeMapping TypeName="uspaModel.history">
+        <MappingFragment StoreEntitySet="history">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="count" ColumnName="count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_config">
+      <EntityTypeMapping TypeName="uspaModel.pro_config">
+        <MappingFragment StoreEntitySet="pro_config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="config_key" ColumnName="config_key" />
+          <ScalarProperty Name="config_value" ColumnName="config_value" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_dev_direction">
+      <EntityTypeMapping TypeName="uspaModel.pro_dev_direction">
+        <MappingFragment StoreEntitySet="pro_dev_direction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_ru" ColumnName="name_ru" />
+          <ScalarProperty Name="name_ua" ColumnName="name_ua" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_direction">
+      <EntityTypeMapping TypeName="uspaModel.pro_direction">
+        <MappingFragment StoreEntitySet="pro_direction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_ru" ColumnName="name_ru" />
+          <ScalarProperty Name="name_ua" ColumnName="name_ua" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_port">
+      <EntityTypeMapping TypeName="uspaModel.pro_port">
+        <MappingFragment StoreEntitySet="pro_port">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_ru" ColumnName="name_ru" />
+          <ScalarProperty Name="name_ua" ColumnName="name_ua" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+          <ScalarProperty Name="plan_href" ColumnName="plan_href" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_project">
+      <EntityTypeMapping TypeName="uspaModel.pro_project">
+        <MappingFragment StoreEntitySet="pro_project">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="port_id" ColumnName="port_id" />
+          <ScalarProperty Name="direction_id" ColumnName="direction_id" />
+          <ScalarProperty Name="dev_direction_id" ColumnName="dev_direction_id" />
+          <ScalarProperty Name="name_ru" ColumnName="name_ru" />
+          <ScalarProperty Name="name_ua" ColumnName="name_ua" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+          <ScalarProperty Name="investor_ru" ColumnName="investor_ru" />
+          <ScalarProperty Name="investor_ua" ColumnName="investor_ua" />
+          <ScalarProperty Name="investor_en" ColumnName="investor_en" />
+          <ScalarProperty Name="expected_result_ru" ColumnName="expected_result_ru" />
+          <ScalarProperty Name="expected_result_ua" ColumnName="expected_result_ua" />
+          <ScalarProperty Name="expected_result_en" ColumnName="expected_result_en" />
+          <ScalarProperty Name="dev_project_ru" ColumnName="dev_project_ru" />
+          <ScalarProperty Name="dev_project_ua" ColumnName="dev_project_ua" />
+          <ScalarProperty Name="dev_project_en" ColumnName="dev_project_en" />
+          <ScalarProperty Name="dev_title_ru" ColumnName="dev_title_ru" />
+          <ScalarProperty Name="dev_title_ua" ColumnName="dev_title_ua" />
+          <ScalarProperty Name="dev_title_en" ColumnName="dev_title_en" />
+          <ScalarProperty Name="tender_ru" ColumnName="tender_ru" />
+          <ScalarProperty Name="tender_ua" ColumnName="tender_ua" />
+          <ScalarProperty Name="tender_en" ColumnName="tender_en" />
+          <ScalarProperty Name="contract_date_ru" ColumnName="contract_date_ru" />
+          <ScalarProperty Name="contract_date_ua" ColumnName="contract_date_ua" />
+          <ScalarProperty Name="contract_date_en" ColumnName="contract_date_en" />
+          <ScalarProperty Name="fact_percent" ColumnName="fact_percent" />
+          <ScalarProperty Name="date_end_ru" ColumnName="date_end_ru" />
+          <ScalarProperty Name="date_end_ua" ColumnName="date_end_ua" />
+          <ScalarProperty Name="date_end_en" ColumnName="date_end_en" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_roles">
+      <EntityTypeMapping TypeName="uspaModel.pro_roles">
+        <MappingFragment StoreEntitySet="pro_roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_user_tokens">
+      <EntityTypeMapping TypeName="uspaModel.pro_user_tokens">
+        <MappingFragment StoreEntitySet="pro_user_tokens">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_agent" ColumnName="user_agent" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="expires" ColumnName="expires" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_users">
+      <EntityTypeMapping TypeName="uspaModel.pro_users">
+        <MappingFragment StoreEntitySet="pro_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="logins" ColumnName="logins" />
+          <ScalarProperty Name="last_login" ColumnName="last_login" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_admin_log">
+      <EntityTypeMapping TypeName="uspaModel.site_admin_log">
+        <MappingFragment StoreEntitySet="site_admin_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="action" ColumnName="action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_admin_menu">
+      <EntityTypeMapping TypeName="uspaModel.site_admin_menu">
+        <MappingFragment StoreEntitySet="site_admin_menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lan" ColumnName="lan" />
+          <ScalarProperty Name="lan_id_for_menu" ColumnName="lan_id_for_menu" />
+          <ScalarProperty Name="belong" ColumnName="belong" />
+          <ScalarProperty Name="p" ColumnName="p" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_category">
+      <EntityTypeMapping TypeName="uspaModel.site_category">
+        <MappingFragment StoreEntitySet="site_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="lan" ColumnName="lan" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="belong" ColumnName="belong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_config">
+      <EntityTypeMapping TypeName="uspaModel.site_config">
+        <MappingFragment StoreEntitySet="site_config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="bottom_logo" ColumnName="bottom_logo" />
+          <ScalarProperty Name="top_img" ColumnName="top_img" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_content">
+      <EntityTypeMapping TypeName="uspaModel.site_content">
+        <MappingFragment StoreEntitySet="site_content">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="lan" ColumnName="lan" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_files">
+      <EntityTypeMapping TypeName="uspaModel.site_files">
+        <MappingFragment StoreEntitySet="site_files">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="content_id" ColumnName="content_id" />
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="discription" ColumnName="discription" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="craeted_date" ColumnName="craeted_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_images">
+      <EntityTypeMapping TypeName="uspaModel.site_images">
+        <MappingFragment StoreEntitySet="site_images">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="content_id" ColumnName="content_id" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="content" ColumnName="content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_info">
+      <EntityTypeMapping TypeName="uspaModel.site_info">
+        <MappingFragment StoreEntitySet="site_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="lan" ColumnName="lan" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="t_logo" ColumnName="t_logo" />
+          <ScalarProperty Name="todey" ColumnName="todey" />
+          <ScalarProperty Name="characteristics" ColumnName="characteristics" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="corridor" ColumnName="corridor" />
+          <ScalarProperty Name="bot_info" ColumnName="bot_info" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="contacts" ColumnName="contacts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_lan">
+      <EntityTypeMapping TypeName="uspaModel.site_lan">
+        <MappingFragment StoreEntitySet="site_lan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lan" ColumnName="lan" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_menu">
+      <EntityTypeMapping TypeName="uspaModel.site_menu">
+        <MappingFragment StoreEntitySet="site_menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="menu_num" ColumnName="menu_num" />
+          <ScalarProperty Name="lan" ColumnName="lan" />
+          <ScalarProperty Name="belong" ColumnName="belong" />
+          <ScalarProperty Name="p" ColumnName="p" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content_id" ColumnName="content_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="sort_by" ColumnName="sort_by" />
+          <ScalarProperty Name="blog_style" ColumnName="blog_style" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_url_content">
+      <EntityTypeMapping TypeName="uspaModel.site_url_content">
+        <MappingFragment StoreEntitySet="site_url_content">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="content_id" ColumnName="content_id" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_url_menu">
+      <EntityTypeMapping TypeName="uspaModel.site_url_menu">
+        <MappingFragment StoreEntitySet="site_url_menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_users">
+      <EntityTypeMapping TypeName="uspaModel.site_users">
+        <MappingFragment StoreEntitySet="site_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_acymailing_history">
+      <EntityTypeMapping TypeName="uspaModel.ampu_acymailing_history">
+        <MappingFragment StoreEntitySet="ampu_acymailing_history">
+          <ScalarProperty Name="subid" ColumnName="subid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="mailid" ColumnName="mailid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_core_log_searches">
+      <EntityTypeMapping TypeName="uspaModel.ampu_core_log_searches">
+        <MappingFragment StoreEntitySet="ampu_core_log_searches">
+          <ScalarProperty Name="search_term" ColumnName="search_term" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_terms_common">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_terms_common">
+        <MappingFragment StoreEntitySet="ampu_finder_terms_common">
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="language" ColumnName="language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_tokens">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_tokens">
+        <MappingFragment StoreEntitySet="ampu_finder_tokens">
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="stem" ColumnName="stem" />
+          <ScalarProperty Name="common" ColumnName="common" />
+          <ScalarProperty Name="phrase" ColumnName="phrase" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="context" ColumnName="context" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_finder_tokens_aggregate">
+      <EntityTypeMapping TypeName="uspaModel.ampu_finder_tokens_aggregate">
+        <MappingFragment StoreEntitySet="ampu_finder_tokens_aggregate">
+          <ScalarProperty Name="term_id" ColumnName="term_id" />
+          <ScalarProperty Name="map_suffix" ColumnName="map_suffix" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="stem" ColumnName="stem" />
+          <ScalarProperty Name="common" ColumnName="common" />
+          <ScalarProperty Name="phrase" ColumnName="phrase" />
+          <ScalarProperty Name="term_weight" ColumnName="term_weight" />
+          <ScalarProperty Name="context" ColumnName="context" />
+          <ScalarProperty Name="context_weight" ColumnName="context_weight" />
+          <ScalarProperty Name="total_weight" ColumnName="total_weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_ga_dash">
+      <EntityTypeMapping TypeName="uspaModel.ampu_ga_dash">
+        <MappingFragment StoreEntitySet="ampu_ga_dash">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="token" ColumnName="token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_ga_dash_cache">
+      <EntityTypeMapping TypeName="uspaModel.ampu_ga_dash_cache">
+        <MappingFragment StoreEntitySet="ampu_ga_dash_cache">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="expire" ColumnName="expire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_aliases">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_aliases">
+        <MappingFragment StoreEntitySet="ampu_kunena_aliases">
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_keywords_map">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_keywords_map">
+        <MappingFragment StoreEntitySet="ampu_kunena_keywords_map">
+          <ScalarProperty Name="keyword_id" ColumnName="keyword_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_polls_users">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_polls_users">
+        <MappingFragment StoreEntitySet="ampu_kunena_polls_users">
+          <ScalarProperty Name="pollid" ColumnName="pollid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="votes" ColumnName="votes" />
+          <ScalarProperty Name="lasttime" ColumnName="lasttime" />
+          <ScalarProperty Name="lastvote" ColumnName="lastvote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_thankyou">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_thankyou">
+        <MappingFragment StoreEntitySet="ampu_kunena_thankyou">
+          <ScalarProperty Name="postid" ColumnName="postid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="targetuserid" ColumnName="targetuserid" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_user_read">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_user_read">
+        <MappingFragment StoreEntitySet="ampu_kunena_user_read">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="message_id" ColumnName="message_id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_kunena_user_topics">
+      <EntityTypeMapping TypeName="uspaModel.ampu_kunena_user_topics">
+        <MappingFragment StoreEntitySet="ampu_kunena_user_topics">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="posts" ColumnName="posts" />
+          <ScalarProperty Name="last_post_id" ColumnName="last_post_id" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="favorite" ColumnName="favorite" />
+          <ScalarProperty Name="subscribed" ColumnName="subscribed" />
+          <ScalarProperty Name="params" ColumnName="params" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_messages_cfg">
+      <EntityTypeMapping TypeName="uspaModel.ampu_messages_cfg">
+        <MappingFragment StoreEntitySet="ampu_messages_cfg">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="cfg_name" ColumnName="cfg_name" />
+          <ScalarProperty Name="cfg_value" ColumnName="cfg_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ampu_user_profiles">
+      <EntityTypeMapping TypeName="uspaModel.ampu_user_profiles">
+        <MappingFragment StoreEntitySet="ampu_user_profiles">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="profile_key" ColumnName="profile_key" />
+          <ScalarProperty Name="profile_value" ColumnName="profile_value" />
+          <ScalarProperty Name="ordering" ColumnName="ordering" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pro_roles_users">
+      <EntityTypeMapping TypeName="uspaModel.pro_roles_users">
+        <MappingFragment StoreEntitySet="pro_roles_users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
